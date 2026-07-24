@@ -1,0 +1,62 @@
+/* TeacherLogin.module.css — Teacher-specific overrides */
+
+.teacherLeft {
+  background: linear-gradient(145deg, #0a0f1e 0%, #1a0a40 60%, #2d0e6e 100%) !important;
+}
+
+.teacherGrad {
+  background: linear-gradient(135deg, #a78bfa, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.teacherBadge {
+  background: rgba(124,58,237,0.12) !important;
+  border-color: rgba(124,58,237,0.25) !important;
+  color: #a78bfa !important;
+}
+
+.teacherBadge > span:first-child {
+  background: #a78bfa !important;
+}
+
+.teacherBtn {
+  background: linear-gradient(135deg, #7c3aed, #a78bfa) !important;
+  box-shadow: 0 4px 15px rgba(124,58,237,0.3) !important;
+}
+
+.teacherBtn:hover:not(:disabled) {
+  box-shadow: 0 8px 25px rgba(124,58,237,0.5) !important;
+}
+
+.featureList {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  margin-top: 1.5rem;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: .85rem;
+  padding: .65rem 1rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(124,58,237,0.15);
+  border-radius: 10px;
+  font-size: .85rem;
+  color: #ccd6f6;
+  transition: all .2s;
+}
+
+.featureItem:hover {
+  background: rgba(124,58,237,0.08);
+  border-color: rgba(124,58,237,0.3);
+  transform: translateX(4px);
+}
+
+.featureEmoji {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}

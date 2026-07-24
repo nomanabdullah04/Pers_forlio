@@ -1,0 +1,113 @@
+/* src/pages/teacher/Settings.module.css */
+.page {
+  padding: 2rem;
+  background: #0a192f;
+  min-height: 100vh;
+  color: #ccd6f6;
+}
+
+.header {
+  margin-bottom: 2.5rem;
+}
+
+.header h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #e6f1ff;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: #8892b0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
+  max-width: 960px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(100, 255, 218, 0.15);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
+  height: fit-content;
+}
+
+.cardHeader {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding-bottom: 0.75rem;
+}
+
+.cardHeader h3 {
+  font-size: 1.15rem;
+  color: #e6f1ff;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.formGroup label {
+  font-size: 0.8rem;
+  color: #8892b0;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.formGroup input, .formGroup select {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  color: #e6f1ff;
+  padding: 0.75rem 1rem;
+  outline: none;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.formGroup input:focus, .formGroup select:focus {
+  border-color: #64ffda;
+  background: rgba(100, 255, 218, 0.02);
+}
+
+.saveBtn {
+  background: linear-gradient(135deg, #64ffda, #7c3aed);
+  color: #0a192f;
+  font-weight: 700;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
+  margin-top: 0.75rem;
+}
+
+.saveBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(100, 255, 218, 0.35);
+}

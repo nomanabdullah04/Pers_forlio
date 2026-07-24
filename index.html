@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Nexus Learning Lab — Personal Portfolio of a Machine Learning & Full-Stack Developer building intelligent educational platforms." />
+  <meta property="og:title" content="Nexus Learning Lab | Developer Portfolio" />
+  <meta property="og:description" content="ML Engineer, Full-Stack Developer, IoT Builder — Creating the future of education through technology." />
+  <title>Nexus Learning Lab | Developer Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════
+       CUSTOM CURSOR
+  ══════════════════════════════════════════ -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ══════════════════════════════════════════
+       LOADER
+  ══════════════════════════════════════════ -->
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-inner">
+      <div class="loader-logo">
+        <span class="loader-n">N</span><span class="loader-x">×</span>
+      </div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+      <p class="loader-text">Initializing Nexus...</p>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       NAVIGATION
+  ══════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo" aria-label="Nexus Learning Lab home">
+        <span class="logo-icon">N×</span>
+        <span class="logo-text">Nexus<span class="accent">Lab</span></span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+        <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+        <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+        <li><a href="#platform" class="nav-link" data-section="platform">Platform</a></li>
+        <li><a href="#timeline" class="nav-link" data-section="timeline">Journey</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="portal/#/student/login" target="_blank" class="btn btn-sm btn-outline" style="margin-right: 0.35rem;"><i class="fas fa-user-graduate"></i> Student</a>
+        <a href="portal/#/teacher/login" target="_blank" class="btn btn-sm btn-outline" style="margin-right: 0.5rem;"><i class="fas fa-chalkboard-teacher"></i> Teacher</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+          <i class="fas fa-moon" id="themeIcon"></i>
+        </button>
+        <a href="#contact" class="btn btn-sm btn-primary">Hire Me</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════════
+       HERO SECTION
+  ══════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <canvas class="neural-canvas" id="neuralCanvas"></canvas>
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span>Available for Projects &amp; Collaboration</span>
+      </div>
+
+      <h1 class="hero-title">
+        Hi, I'm <span class="gradient-text">Nexus Dev</span>
+      </h1>
+
+      <div class="hero-role">
+        <span class="role-prefix">I build </span>
+        <span class="typewriter-wrap">
+          <span class="typewriter" id="typewriter"></span>
+          <span class="typewriter-cursor">|</span>
+        </span>
+      </div>
+
+      <p class="hero-description">
+        A passionate <strong>Machine Learning Engineer</strong> &amp; <strong>Full-Stack Developer</strong>
+        crafting intelligent systems and educational platforms. Currently building
+        <span class="highlight-text">Nexus Learning Lab</span> — the future of digital education in Bangladesh.
+      </p>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number" data-target="12">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Projects</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="8">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Tech Stack</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="3">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Years Coding</span>
+        </div>
+      </div>
+
+      <div class="hero-cta">
+        <a href="portal/#/student/login" target="_blank" class="btn btn-primary btn-lg" id="studentPortalBtn">
+          <i class="fas fa-user-graduate"></i>
+          <span>Student Portal</span>
+        </a>
+        <a href="portal/#/teacher/login" target="_blank" class="btn btn-outline btn-lg" id="teacherPortalBtn">
+          <i class="fas fa-chalkboard-teacher"></i>
+          <span>Teacher Portal</span>
+        </a>
+        <a href="#projects" class="btn btn-ghost btn-lg" id="viewProjectsBtn">
+          <i class="fas fa-rocket"></i>
+          <span>View Projects</span>
+        </a>
+      </div>
+
+      <div class="hero-socials">
+        <a href="https://github.com" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://twitter.com" target="_blank" rel="noopener" class="social-link" aria-label="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="mailto:nexus@example.com" class="social-link" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-avatar-wrap">
+        <div class="avatar-ring avatar-ring-1"></div>
+        <div class="avatar-ring avatar-ring-2"></div>
+        <div class="avatar-ring avatar-ring-3"></div>
+        <div class="avatar-img">
+          <img src="assets/avatar.png" alt="Developer avatar" id="avatarImg" onerror="this.style.display='none'; document.getElementById('avatarFallback').style.display='flex';" />
+          <div class="avatar-fallback" id="avatarFallback">
+            <span>N×</span>
+          </div>
+        </div>
+        <div class="floating-badge badge-ml">
+          <i class="fas fa-brain"></i> ML
+        </div>
+        <div class="floating-badge badge-web">
+          <i class="fas fa-code"></i> Web
+        </div>
+        <div class="floating-badge badge-iot">
+          <i class="fas fa-microchip"></i> IoT
+        </div>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-indicator" aria-label="Scroll to about section">
+      <div class="scroll-mouse">
+        <div class="scroll-dot"></div>
+      </div>
+      <span>Scroll Down</span>
+    </a>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       ABOUT SECTION
+  ══════════════════════════════════════════ -->
+  <section class="section about-section" id="about">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="section-tag">Who I Am</span>
+        <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text" data-animate>
+          <p class="about-lead">
+            I'm a developer passionate about the intersection of <span class="accent-text">Artificial Intelligence</span>,
+            <span class="accent-text">Web Development</span>, and <span class="accent-text">Education Technology</span>.
+          </p>
+          <p>
+            Currently in my final year of B.Sc. in CSE, I've been building Nexus Learning Lab — a comprehensive
+            online education platform designed to bridge the gap between students and quality teachers across Bangladesh.
+            From Django backends to React frontends, from Arduino IoT modules to machine learning pipelines, I love
+            building systems that make a real impact.
+          </p>
+          <p>
+            When I'm not coding, you'll find me contributing to open-source projects, writing technical articles,
+            or experimenting with neural network architectures. I believe technology should empower people, not overwhelm them.
+          </p>
+
+          <div class="about-info-grid">
+            <div class="info-item">
+              <span class="info-label"><i class="fas fa-map-marker-alt"></i> Location</span>
+              <span class="info-value">Bangladesh 🇧🇩</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label"><i class="fas fa-graduation-cap"></i> Degree</span>
+              <span class="info-value">B.Sc. in CSE</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label"><i class="fas fa-briefcase"></i> Status</span>
+              <span class="info-value">Open to Opportunities</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label"><i class="fas fa-language"></i> Languages</span>
+              <span class="info-value">Bengali, English</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-cards" data-animate>
+          <div class="glass-card about-card" id="aboutCard1">
+            <div class="card-icon-wrap" style="--card-color: #64ffda;">
+              <i class="fas fa-brain"></i>
+            </div>
+            <h3>ML & AI</h3>
+            <p>Building intelligent models that learn, adapt, and solve real-world problems using Python, TensorFlow & scikit-learn.</p>
+          </div>
+          <div class="glass-card about-card" id="aboutCard2">
+            <div class="card-icon-wrap" style="--card-color: #7c3aed;">
+              <i class="fas fa-layer-group"></i>
+            </div>
+            <h3>Full-Stack Dev</h3>
+            <p>End-to-end web systems with Django REST APIs, React frontends, and MySQL databases deployed on cloud infrastructure.</p>
+          </div>
+          <div class="glass-card about-card" id="aboutCard3">
+            <div class="card-icon-wrap" style="--card-color: #f59e0b;">
+              <i class="fas fa-microchip"></i>
+            </div>
+            <h3>IoT & Hardware</h3>
+            <p>Designing connected devices with Arduino, ESP32, and Raspberry Pi integrated into cloud platforms for smart systems.</p>
+          </div>
+          <div class="glass-card about-card" id="aboutCard4">
+            <div class="card-icon-wrap" style="--card-color: #ef4444;">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <h3>EdTech</h3>
+            <p>Creating platforms that democratize quality education through technology — from video streaming to AI-powered tutoring.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SKILLS SECTION
+  ══════════════════════════════════════════ -->
+  <section class="section skills-section" id="skills">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="section-tag">What I Know</span>
+        <h2 class="section-title">Tech <span class="gradient-text">Arsenal</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="skills-tabs" data-animate>
+        <button class="skill-tab active" data-tab="all" id="skillTabAll">All</button>
+        <button class="skill-tab" data-tab="ml" id="skillTabMl">ML / AI</button>
+        <button class="skill-tab" data-tab="web" id="skillTabWeb">Web Dev</button>
+        <button class="skill-tab" data-tab="iot" id="skillTabIot">IoT</button>
+        <button class="skill-tab" data-tab="tools" id="skillTabTools">Tools</button>
+      </div>
+
+      <div class="skills-grid" id="skillsGrid" data-animate>
+
+        <!-- ML / AI -->
+        <div class="skill-card" data-category="ml" data-animate>
+          <div class="skill-icon-box" style="--skill-color: #ff6b6b;">
+            <i class="fab fa-python"></i>
+          </div>
+          <span class="skill-name">Python</span>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-width="92"></div></div>
+          <span class="skill-pct">92%</span>
+        </div>
+
+        <div class="skill-card" data-category="ml" data-animate>
+          <div class="skill-icon-box" style="--skill-color: #ff9f43;">
+            <i class="fas fa-brain"></i>
+          </div>
+          <span class="skill-name">TensorFlow</span>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-width="78"></div></div>
+          <span class="skill-pct">78%</span>
+        </div>
+
+        <div class="skill-card" data-category="ml" data-animate>
+          <div class="skill-icon-box" style="--skill-color: #54a0ff;">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <span class="skill-name">Scikit-Learn</span>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-width="82"></div></div>
+          <span class="skill-pct">82%</span>
+        </div>
+
+        <div class="skill-card" data-category="ml" data-animate>
+          <div class="skill-icon-box" style="--skill-color: #5f27cd;">
+            <i class="fas fa-fire"></i>
+          </div>
+          <span class="skill-name">PyTorch</span>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-width="65"></div></div>
+          <span class="skill-pct">65%</span>
+        </div>
+
+        <!-- Web Dev -->
+        <div class="skill-card" data-category="web" data-animate>
+          <div class="skill-icon-box" style="--skill-color: #00b894;">
+            <i class="fab fa-django" style="font-family:'Font Awesome 6 Free'; font-weight:400;"></i>
+            <i class="fas fa-server"></i>
+          </div>
+          <span class="skill-name">Django</span>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-width="88"></div></div>
+          <span class="skill-pct">88%</span>
+        </div>
+
+        <div class="skill-card" data-category="web" data-animate>
+          <div class="skill-icon-box" style="--skill-color: #61dafb;">
+            <i class="fab fa-react"></i>
+          </div>
+          <span class="skill-name">React</span>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-width="80"></div></div>
+          <span class="skill-pct">80%</span>
+        </div>
+
+        <div class="skill-card" data-category="web" data-animate>
+          <div class="skill-icon-box" style="--skill-color: #f7df1e;">
+            <i class="fab fa-js"></i>
+          </div>
+          <span class="skill-name">JavaScript</span>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-width="85"></div></div>
+          <span class="skill-pct">85%</span>
+        </div>
+
+        <div class="skill-card" data-category="web" data-animate>
+          <div class="skill-icon-box" style="--skill-color: #4fc3f7;">
+            <i class="fas fa-database"></i>
+          </div>
+          <span class="skill-name">MySQL</span>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-width="83"></div></div>
+          <span class="skill-pct">83%</span>
+        </div>
+
+        <div class="skill-card" data-category="web" data-animate>
+          <div class="skill-icon-box" style="--skill-color: #e84393;">
+            <i class="fab fa-html5"></i>
+          </div>
+          <span class="skill-name">HTML / CSS</span>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-width="95"></div></div>
+          <span class="skill-pct">95%</span>
+        </div>
+
+        <!-- IoT -->
+        <div class="skill-card" data-category="iot" data-animate>
+          <div class="skill-icon-box" style="--skill-color: #00cec9;">
+            <i class="fas fa-microchip"></i>
+          </div>
+          <span class="skill-name">Arduino</span>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-width="75"></div></div>
+          <span class="skill-pct">75%</span>
+        </div>
+
+        <div class="skill-card" data-category="iot" data-animate>
+          <div class="skill-icon-box" style="--skill-color: #a29bfe;">
+            <i class="fas fa-wifi"></i>
+          </div>
+          <span class="skill-name">ESP32</span>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-width="70"></div></div>
+          <span class="skill-pct">70%</span>
+        </div>
+
+        <div class="skill-card" data-category="iot" data-animate>
+          <div class="skill-icon-box" style="--skill-color: #c0392b;">
+            <i class="fas fa-raspberry-pi"></i>
+          </div>
+          <span class="skill-name">Raspberry Pi</span>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-width="60"></div></div>
+          <span class="skill-pct">60%</span>
+        </div>
+
+        <!-- Tools -->
+        <div class="skill-card" data-category="tools" data-animate>
+          <div class="skill-icon-box" style="--skill-color: #f05032;">
+            <i class="fab fa-git-alt"></i>
+          </div>
+          <span class="skill-name">Git / GitHub</span>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-width="88"></div></div>
+          <span class="skill-pct">88%</span>
+        </div>
+
+        <div class="skill-card" data-category="tools" data-animate>
+          <div class="skill-icon-box" style="--skill-color: #2496ed;">
+            <i class="fab fa-docker"></i>
+          </div>
+          <span class="skill-name">Docker</span>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-width="65"></div></div>
+          <span class="skill-pct">65%</span>
+        </div>
+
+        <div class="skill-card" data-category="tools" data-animate>
+          <div class="skill-icon-box" style="--skill-color: #ff9500;">
+            <i class="fas fa-terminal"></i>
+          </div>
+          <span class="skill-name">Linux / Bash</span>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-width="72"></div></div>
+          <span class="skill-pct">72%</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       PROJECTS SECTION
+  ══════════════════════════════════════════ -->
+  <section class="section projects-section" id="projects">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="section-tag">What I've Built</span>
+        <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="project-filters" data-animate>
+        <button class="filter-btn active" data-filter="all" id="filterAll">All</button>
+        <button class="filter-btn" data-filter="ml" id="filterMl">ML / AI</button>
+        <button class="filter-btn" data-filter="web" id="filterWeb">Web Dev</button>
+        <button class="filter-btn" data-filter="iot" id="filterIot">IoT</button>
+        <button class="filter-btn" data-filter="edtech" id="filterEdtech">EdTech</button>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+
+        <!-- Featured: Nexus Learning Lab -->
+        <div class="project-card featured-card" data-cat="edtech web" data-animate>
+          <div class="project-card-inner">
+            <div class="project-badge">⭐ Featured</div>
+            <div class="project-img-wrap">
+              <div class="project-img project-img-nexus">
+                <div class="project-mock">
+                  <div class="mock-topbar">
+                    <span class="mock-dot red"></span>
+                    <span class="mock-dot yellow"></span>
+                    <span class="mock-dot green"></span>
+                    <span class="mock-url">nexuslearninglab.com</span>
+                  </div>
+                  <div class="mock-content">
+                    <div class="mock-sidebar"></div>
+                    <div class="mock-main">
+                      <div class="mock-hero-block"></div>
+                      <div class="mock-cards">
+                        <div class="mock-card-sm"></div>
+                        <div class="mock-card-sm"></div>
+                        <div class="mock-card-sm"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Nexus Learning Lab</h3>
+              <p class="project-desc">A comprehensive online educational platform connecting students (Class 8–HSC) with qualified teachers. Features live tutoring, recorded courses, progress tracking, AI-powered recommendations, and admin management.</p>
+              <div class="project-tags">
+                <span class="tag">Django</span>
+                <span class="tag">React</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">Bootstrap 5</span>
+                <span class="tag">REST API</span>
+                <span class="tag">AI/ML</span>
+              </div>
+              <div class="project-links">
+                <a href="#platform" class="btn btn-sm btn-primary"><i class="fas fa-eye"></i> View Platform</a>
+                <a href="https://github.com" target="_blank" rel="noopener" class="btn btn-sm btn-outline"><i class="fab fa-github"></i> GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ML Sentiment Analyzer -->
+        <div class="project-card" data-cat="ml" data-animate>
+          <div class="project-card-inner">
+            <div class="project-img-wrap">
+              <div class="project-img project-img-ml1">
+                <div class="project-icon-visual">
+                  <i class="fas fa-brain" style="font-size:3rem; color:#7c3aed;"></i>
+                  <div class="neural-lines"></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Sentiment Analysis Engine</h3>
+              <p class="project-desc">NLP-powered sentiment classifier trained on Bengali & English text. Achieves 94% accuracy using BERT fine-tuning. Integrated with Django REST API for real-time analysis.</p>
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">BERT</span>
+                <span class="tag">NLP</span>
+                <span class="tag">Django</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn btn-sm btn-primary"><i class="fas fa-rocket"></i> Live Demo</a>
+                <a href="https://github.com" target="_blank" rel="noopener" class="btn btn-sm btn-outline"><i class="fab fa-github"></i> Code</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- IoT Smart Campus -->
+        <div class="project-card" data-cat="iot" data-animate>
+          <div class="project-card-inner">
+            <div class="project-img-wrap">
+              <div class="project-img project-img-iot">
+                <div class="project-icon-visual">
+                  <i class="fas fa-microchip" style="font-size:3rem; color:#00cec9;"></i>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Smart Campus Monitor</h3>
+              <p class="project-desc">IoT-based campus environment monitoring using ESP32 sensors. Tracks temperature, humidity, air quality, and attendance with real-time dashboard and mobile alerts.</p>
+              <div class="project-tags">
+                <span class="tag">ESP32</span>
+                <span class="tag">MQTT</span>
+                <span class="tag">React</span>
+                <span class="tag">Node.js</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn btn-sm btn-primary"><i class="fas fa-rocket"></i> Demo</a>
+                <a href="https://github.com" target="_blank" rel="noopener" class="btn btn-sm btn-outline"><i class="fab fa-github"></i> Code</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student Admission System -->
+        <div class="project-card" data-cat="web" data-animate>
+          <div class="project-card-inner">
+            <div class="project-img-wrap">
+              <div class="project-img project-img-web1">
+                <div class="project-icon-visual">
+                  <i class="fas fa-university" style="font-size:3rem; color:#f59e0b;"></i>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Online Admission Portal</h3>
+              <p class="project-desc">A full-stack admission management system for educational institutions. Multi-role system (Admin, Applicant, Staff) with document upload, status tracking, and automated emails.</p>
+              <div class="project-tags">
+                <span class="tag">Django</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">Bootstrap</span>
+                <span class="tag">Celery</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn btn-sm btn-primary"><i class="fas fa-rocket"></i> Demo</a>
+                <a href="https://github.com" target="_blank" rel="noopener" class="btn btn-sm btn-outline"><i class="fab fa-github"></i> Code</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ML Image Classifier -->
+        <div class="project-card" data-cat="ml" data-animate>
+          <div class="project-card-inner">
+            <div class="project-img-wrap">
+              <div class="project-img project-img-ml2">
+                <div class="project-icon-visual">
+                  <i class="fas fa-eye" style="font-size:3rem; color:#ef4444;"></i>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Plant Disease Detector</h3>
+              <p class="project-desc">CNN-based image classification system to identify plant diseases from leaf photos. Trained on 50,000+ images, achieving 91% accuracy. Built with TensorFlow & Flask API.</p>
+              <div class="project-tags">
+                <span class="tag">TensorFlow</span>
+                <span class="tag">CNN</span>
+                <span class="tag">Flask</span>
+                <span class="tag">OpenCV</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn btn-sm btn-primary"><i class="fas fa-rocket"></i> Demo</a>
+                <a href="https://github.com" target="_blank" rel="noopener" class="btn btn-sm btn-outline"><i class="fab fa-github"></i> Code</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chat App -->
+        <div class="project-card" data-cat="web" data-animate>
+          <div class="project-card-inner">
+            <div class="project-img-wrap">
+              <div class="project-img project-img-web2">
+                <div class="project-icon-visual">
+                  <i class="fas fa-comments" style="font-size:3rem; color:#54a0ff;"></i>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Real-time Chat System</h3>
+              <p class="project-desc">WebSocket-powered chat application with rooms, direct messages, file sharing, and read receipts. Built on Django Channels with React frontend and Redis pub/sub.</p>
+              <div class="project-tags">
+                <span class="tag">Django Channels</span>
+                <span class="tag">WebSocket</span>
+                <span class="tag">Redis</span>
+                <span class="tag">React</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn btn-sm btn-primary"><i class="fas fa-rocket"></i> Demo</a>
+                <a href="https://github.com" target="_blank" rel="noopener" class="btn btn-sm btn-outline"><i class="fab fa-github"></i> Code</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="projects-cta" data-animate>
+        <a href="https://github.com" target="_blank" rel="noopener" class="btn btn-outline btn-lg">
+          <i class="fab fa-github"></i> See All Projects on GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       NEXUS PLATFORM SHOWCASE
+  ══════════════════════════════════════════ -->
+  <section class="section platform-section" id="platform">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="section-tag">My Flagship Project</span>
+        <h2 class="section-title">Nexus <span class="gradient-text">Learning Lab</span></h2>
+        <p class="section-subtitle">A complete educational ecosystem connecting students, teachers, and administrators</p>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="platform-showcase" data-animate>
+        <div class="platform-tabs">
+          <button class="platform-tab active" data-ptab="student" id="ptabStudent">
+            <i class="fas fa-user-graduate"></i> Student Portal
+          </button>
+          <button class="platform-tab" data-ptab="teacher" id="ptabTeacher">
+            <i class="fas fa-chalkboard-teacher"></i> Teacher Portal
+          </button>
+          <button class="platform-tab" data-ptab="admin" id="ptabAdmin">
+            <i class="fas fa-shield-alt"></i> Admin Panel
+          </button>
+          <button class="platform-tab" data-ptab="ai" id="ptabAi">
+            <i class="fas fa-robot"></i> AI Features
+          </button>
+        </div>
+
+        <div class="platform-content">
+          <!-- Student -->
+          <div class="platform-panel active" id="panelStudent">
+            <div class="panel-browser">
+              <div class="browser-bar">
+                <span class="mock-dot red"></span>
+                <span class="mock-dot yellow"></span>
+                <span class="mock-dot green"></span>
+                <span class="browser-url">student.nexuslearninglab.com/dashboard</span>
+              </div>
+              <div class="panel-mock student-mock">
+                <div class="mock-nav"><span>📚 Nexus</span><span>My Courses</span><span>Schedule</span><span>Progress</span></div>
+                <div class="mock-body">
+                  <div class="mock-welcome">Welcome back, Student! 👋</div>
+                  <div class="mock-progress-cards">
+                    <div class="mpcard" style="--c:#64ffda">
+                      <div class="mpcard-icon">📖</div>
+                      <div>Physics<br/><small>Class 10</small></div>
+                      <div class="mpcard-pct">72%</div>
+                    </div>
+                    <div class="mpcard" style="--c:#7c3aed">
+                      <div class="mpcard-icon">🔢</div>
+                      <div>Math<br/><small>HSC</small></div>
+                      <div class="mpcard-pct">88%</div>
+                    </div>
+                    <div class="mpcard" style="--c:#f59e0b">
+                      <div class="mpcard-icon">⚗️</div>
+                      <div>Chemistry<br/><small>Class 9</small></div>
+                      <div class="mpcard-pct">55%</div>
+                    </div>
+                  </div>
+                  <div class="mock-upcoming">
+                    <div class="upcoming-label">📅 Upcoming Live Sessions</div>
+                    <div class="upcoming-item"><span>🟢</span><span>Math — Advanced Integration</span><span>Today 4PM</span></div>
+                    <div class="upcoming-item"><span>🔵</span><span>Physics — Electromagnetic</span><span>Tomorrow 2PM</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-features">
+              <h3>Student Features</h3>
+              <ul class="feature-list">
+                <li><i class="fas fa-check-circle"></i> Browse & enroll in courses by class level</li>
+                <li><i class="fas fa-check-circle"></i> Attend live video tutoring sessions</li>
+                <li><i class="fas fa-check-circle"></i> Watch recorded lesson videos on-demand</li>
+                <li><i class="fas fa-check-circle"></i> Take quizzes &amp; track learning progress</li>
+                <li><i class="fas fa-check-circle"></i> Receive AI-powered study recommendations</li>
+                <li><i class="fas fa-check-circle"></i> Chat with teachers &amp; peers</li>
+                <li><i class="fas fa-check-circle"></i> Download study materials &amp; notes</li>
+              </ul>
+              <div class="panel-cta" style="margin-top: 1.5rem;">
+                <a href="portal/#/student/login" class="btn btn-primary" target="_blank" id="launch-student-portal-btn">
+                  Launch Student Portal <i class="fas fa-external-link-alt" style="margin-left: 0.5rem;"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Teacher -->
+          <div class="platform-panel" id="panelTeacher">
+            <div class="panel-browser">
+              <div class="browser-bar">
+                <span class="mock-dot red"></span>
+                <span class="mock-dot yellow"></span>
+                <span class="mock-dot green"></span>
+                <span class="browser-url">teacher.nexuslearninglab.com/dashboard</span>
+              </div>
+              <div class="panel-mock teacher-mock">
+                <div class="mock-nav"><span>🎓 Nexus</span><span>My Courses</span><span>Students</span><span>Analytics</span></div>
+                <div class="mock-body">
+                  <div class="mock-welcome">Hello, Teacher! 👩‍🏫</div>
+                  <div class="teacher-stats">
+                    <div class="tstat"><span class="tstat-n">142</span><span>Students</span></div>
+                    <div class="tstat"><span class="tstat-n">8</span><span>Courses</span></div>
+                    <div class="tstat"><span class="tstat-n">4.8⭐</span><span>Rating</span></div>
+                  </div>
+                  <div class="mock-upcoming">
+                    <div class="upcoming-label">📹 Recent Submissions</div>
+                    <div class="upcoming-item"><span>✅</span><span>Ahmed — Physics Quiz</span><span>92/100</span></div>
+                    <div class="upcoming-item"><span>⏳</span><span>Sara — Math Assignment</span><span>Pending</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-features">
+              <h3>Teacher Features</h3>
+              <ul class="feature-list">
+                <li><i class="fas fa-check-circle"></i> Create &amp; manage course content</li>
+                <li><i class="fas fa-check-circle"></i> Host live interactive sessions</li>
+                <li><i class="fas fa-check-circle"></i> Upload video lectures &amp; resources</li>
+                <li><i class="fas fa-check-circle"></i> Create quizzes &amp; assignments</li>
+                <li><i class="fas fa-check-circle"></i> Track student performance analytics</li>
+                <li><i class="fas fa-check-circle"></i> Receive monthly earnings &amp; payments</li>
+                <li><i class="fas fa-check-circle"></i> Verified teacher badge &amp; profile</li>
+              </ul>
+              <div class="panel-cta" style="margin-top: 1.5rem;">
+                <a href="portal/#/teacher/login" class="btn btn-primary" target="_blank" id="launch-teacher-portal-btn">
+                  Launch Teacher Portal <i class="fas fa-external-link-alt" style="margin-left: 0.5rem;"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Admin -->
+          <div class="platform-panel" id="panelAdmin">
+            <div class="panel-browser">
+              <div class="browser-bar">
+                <span class="mock-dot red"></span>
+                <span class="mock-dot yellow"></span>
+                <span class="mock-dot green"></span>
+                <span class="browser-url">admin.nexuslearninglab.com/dashboard</span>
+              </div>
+              <div class="panel-mock admin-mock">
+                <div class="mock-nav"><span>🛡️ Admin</span><span>Users</span><span>Content</span><span>Reports</span></div>
+                <div class="mock-body">
+                  <div class="admin-stats-grid">
+                    <div class="astat" style="--c:#64ffda"><span>1,240</span><br/>Total Students</div>
+                    <div class="astat" style="--c:#7c3aed"><span>86</span><br/>Teachers</div>
+                    <div class="astat" style="--c:#f59e0b"><span>320</span><br/>Courses</div>
+                    <div class="astat" style="--c:#ef4444"><span>৳48K</span><br/>Revenue</div>
+                  </div>
+                  <div class="admin-chart">
+                    <div class="chart-bars">
+                      <div class="cbar" style="height:60%; --bc:#64ffda"></div>
+                      <div class="cbar" style="height:75%; --bc:#7c3aed"></div>
+                      <div class="cbar" style="height:50%; --bc:#f59e0b"></div>
+                      <div class="cbar" style="height:90%; --bc:#64ffda"></div>
+                      <div class="cbar" style="height:65%; --bc:#7c3aed"></div>
+                      <div class="cbar" style="height:80%; --bc:#f59e0b"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-features">
+              <h3>Admin Features</h3>
+              <ul class="feature-list">
+                <li><i class="fas fa-check-circle"></i> Full user management (Students, Teachers)</li>
+                <li><i class="fas fa-check-circle"></i> Content moderation &amp; approval</li>
+                <li><i class="fas fa-check-circle"></i> Revenue &amp; payment management</li>
+                <li><i class="fas fa-check-circle"></i> Platform analytics &amp; reporting</li>
+                <li><i class="fas fa-check-circle"></i> System configuration &amp; settings</li>
+                <li><i class="fas fa-check-circle"></i> Support ticket management</li>
+                <li><i class="fas fa-check-circle"></i> Teacher verification &amp; onboarding</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- AI Features -->
+          <div class="platform-panel" id="panelAi">
+            <div class="panel-browser">
+              <div class="browser-bar">
+                <span class="mock-dot red"></span>
+                <span class="mock-dot yellow"></span>
+                <span class="mock-dot green"></span>
+                <span class="browser-url">nexuslearninglab.com/ai-tutor</span>
+              </div>
+              <div class="panel-mock ai-mock">
+                <div class="ai-chat">
+                  <div class="ai-msg bot"><span class="ai-avatar">🤖</span><span>Hello! I'm Nexus AI. How can I help you today?</span></div>
+                  <div class="ai-msg user"><span>Can you explain integration by parts?</span></div>
+                  <div class="ai-msg bot"><span class="ai-avatar">🤖</span><span>Sure! Integration by parts uses: ∫u dv = uv - ∫v du. Let me show you a step-by-step example...</span></div>
+                  <div class="ai-typing"><span></span><span></span><span></span></div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-features">
+              <h3>AI-Powered Features</h3>
+              <ul class="feature-list">
+                <li><i class="fas fa-check-circle"></i> AI Tutor chatbot for instant doubt clearing</li>
+                <li><i class="fas fa-check-circle"></i> Personalized course recommendations</li>
+                <li><i class="fas fa-check-circle"></i> Adaptive quiz difficulty based on performance</li>
+                <li><i class="fas fa-check-circle"></i> Automated essay &amp; assignment grading</li>
+                <li><i class="fas fa-check-circle"></i> Learning path optimization</li>
+                <li><i class="fas fa-check-circle"></i> Engagement &amp; dropout prediction</li>
+                <li><i class="fas fa-check-circle"></i> Bengali &amp; English NLP support</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tech Stack used -->
+      <div class="platform-tech" data-animate>
+        <h3>Built With</h3>
+        <div class="tech-orbit-wrap">
+          <div class="tech-center">
+            <span>Nexus</span>
+          </div>
+          <div class="tech-orbit">
+            <div class="tech-orb" style="--angle:0deg; --clr:#3ddc84;"><i class="fas fa-server"></i><span>Django</span></div>
+            <div class="tech-orb" style="--angle:51.4deg; --clr:#61dafb;"><i class="fab fa-react"></i><span>React</span></div>
+            <div class="tech-orb" style="--angle:102.9deg; --clr:#f29111;"><i class="fas fa-database"></i><span>MySQL</span></div>
+            <div class="tech-orb" style="--angle:154.3deg; --clr:#7c3aed;"><i class="fab fa-bootstrap"></i><span>Bootstrap</span></div>
+            <div class="tech-orb" style="--angle:205.7deg; --clr:#2496ed;"><i class="fab fa-docker"></i><span>Docker</span></div>
+            <div class="tech-orb" style="--angle:257.1deg; --clr:#ff6b6b;"><i class="fab fa-python"></i><span>Python</span></div>
+            <div class="tech-orb" style="--angle:308.6deg; --clr:#00b894;"><i class="fas fa-robot"></i><span>AI/ML</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       TIMELINE SECTION
+  ══════════════════════════════════════════ -->
+  <section class="section timeline-section" id="timeline">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="section-tag">My Story</span>
+        <h2 class="section-title">The <span class="gradient-text">Journey</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item" data-animate>
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass-card">
+            <span class="timeline-date">2021</span>
+            <h3 class="timeline-title">Started B.Sc. CSE</h3>
+            <p>Enrolled in Computer Science & Engineering. Discovered passion for Machine Learning and Web Development in the first semester.</p>
+            <div class="timeline-tags"><span class="tag">University</span><span class="tag">C Programming</span></div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-animate>
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass-card">
+            <span class="timeline-date">2022</span>
+            <h3 class="timeline-title">First Web Project</h3>
+            <p>Built a complete Student Management System using Django and MySQL. First taste of full-stack development — got hooked instantly.</p>
+            <div class="timeline-tags"><span class="tag">Django</span><span class="tag">MySQL</span><span class="tag">Bootstrap</span></div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-animate>
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass-card">
+            <span class="timeline-date">2023</span>
+            <h3 class="timeline-title">Dived Into ML &amp; AI</h3>
+            <p>Completed Machine Learning specialization. Built first neural networks for image and text classification. Contributed to open-source ML projects.</p>
+            <div class="timeline-tags"><span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">NLP</span></div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-animate>
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass-card">
+            <span class="timeline-date">2024</span>
+            <h3 class="timeline-title">Nexus Learning Lab Born</h3>
+            <p>Conceptualized and began building Nexus Learning Lab — an ambitious EdTech platform designed to solve education access problems in Bangladesh.</p>
+            <div class="timeline-tags"><span class="tag">EdTech</span><span class="tag">React</span><span class="tag">AI</span></div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-animate>
+          <div class="timeline-dot active-dot"></div>
+          <div class="timeline-card glass-card active-card">
+            <span class="timeline-date">2025 — Now</span>
+            <h3 class="timeline-title">Final Year &amp; Launch 🚀</h3>
+            <p>Completing B.Sc. thesis on AI-powered learning platforms while actively developing Nexus Learning Lab for beta launch. Seeking collaborators &amp; opportunities.</p>
+            <div class="timeline-tags"><span class="tag">Thesis</span><span class="tag">Startup</span><span class="tag">Open to Hire</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       CONTACT SECTION
+  ══════════════════════════════════════════ -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="section-tag">Let's Connect</span>
+        <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+        <p class="section-subtitle">Have a project idea, want to collaborate, or just want to say hi? My inbox is always open!</p>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info" data-animate>
+          <div class="contact-card glass-card">
+            <a href="mailto:nexus@example.com" class="contact-item" id="contactEmail">
+              <div class="contact-icon" style="--ci-color:#64ffda;">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <span class="ci-label">Email</span>
+                <span class="ci-value">nexus@example.com</span>
+              </div>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="contact-item" id="contactLinkedin">
+              <div class="contact-icon" style="--ci-color:#0077b5;">
+                <i class="fab fa-linkedin-in"></i>
+              </div>
+              <div>
+                <span class="ci-label">LinkedIn</span>
+                <span class="ci-value">linkedin.com/in/nexusdev</span>
+              </div>
+            </a>
+            <a href="https://github.com" target="_blank" rel="noopener" class="contact-item" id="contactGithub">
+              <div class="contact-icon" style="--ci-color:#f0f6ff;">
+                <i class="fab fa-github"></i>
+              </div>
+              <div>
+                <span class="ci-label">GitHub</span>
+                <span class="ci-value">github.com/nexusdev</span>
+              </div>
+            </a>
+            <a href="https://wa.me/8801800000000" target="_blank" rel="noopener" class="contact-item" id="contactWhatsapp">
+              <div class="contact-icon" style="--ci-color:#25d366;">
+                <i class="fab fa-whatsapp"></i>
+              </div>
+              <div>
+                <span class="ci-label">WhatsApp</span>
+                <span class="ci-value">+880 1800-000000</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="availability-badge" data-animate>
+            <div class="avail-pulse"></div>
+            <div>
+              <strong>Available for Freelance & Full-time</strong>
+              <p>Response within 24 hours</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap" data-animate>
+          <form class="contact-form glass-card" id="contactForm" novalidate>
+            <div class="form-group">
+              <input type="text" id="formName" name="name" class="form-input" required placeholder=" " autocomplete="name" />
+              <label for="formName" class="form-label">Your Name</label>
+              <div class="form-line"></div>
+            </div>
+            <div class="form-group">
+              <input type="email" id="formEmail" name="email" class="form-input" required placeholder=" " autocomplete="email" />
+              <label for="formEmail" class="form-label">Your Email</label>
+              <div class="form-line"></div>
+            </div>
+            <div class="form-group">
+              <input type="text" id="formSubject" name="subject" class="form-input" placeholder=" " />
+              <label for="formSubject" class="form-label">Subject</label>
+              <div class="form-line"></div>
+            </div>
+            <div class="form-group">
+              <textarea id="formMessage" name="message" class="form-input form-textarea" required placeholder=" " rows="5"></textarea>
+              <label for="formMessage" class="form-label">Your Message</label>
+              <div class="form-line"></div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-full" id="submitBtn">
+              <span class="btn-text"><i class="fas fa-paper-plane"></i> Send Message</span>
+              <span class="btn-loading" style="display:none;"><i class="fas fa-spinner fa-spin"></i> Sending...</span>
+            </button>
+            <div class="form-success" id="formSuccess" style="display:none;">
+              <i class="fas fa-check-circle"></i>
+              <span>Message sent! I'll get back to you soon.</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-neural">
+      <canvas id="footerCanvas"></canvas>
+    </div>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="#hero" class="nav-logo">
+            <span class="logo-icon">N×</span>
+            <span class="logo-text">Nexus<span class="accent">Lab</span></span>
+          </a>
+          <p>Building intelligent systems that make education accessible to everyone.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#platform">Platform</a></li>
+            <li><a href="#timeline">Journey</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-social-links">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://github.com" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a></li>
+            <li><a href="https://linkedin.com" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+            <li><a href="https://twitter.com" target="_blank" rel="noopener"><i class="fab fa-twitter"></i> Twitter</a></li>
+            <li><a href="mailto:nexus@example.com"><i class="fas fa-envelope"></i> Email</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Nexus Learning Lab. Crafted with <span class="heart">❤️</span> &amp; lots of ☕</p>
+        <button class="back-to-top" id="backToTop" aria-label="Back to top">
+          <i class="fas fa-arrow-up"></i>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════════
+       FLOATING AI BUTTON
+  ══════════════════════════════════════════ -->
+  <button class="ai-fab" id="aiFab" aria-label="Nexus AI Assistant">
+    <i class="fas fa-robot"></i>
+    <span class="fab-tooltip">Nexus AI</span>
+    <div class="fab-pulse"></div>
+  </button>
+
+  <!-- AI Chat Modal -->
+  <div class="ai-chat-modal" id="aiChatModal">
+    <div class="ai-chat-header">
+      <div class="ai-chat-info">
+        <div class="ai-avatar-sm"><i class="fas fa-robot"></i></div>
+        <div>
+          <strong>Nexus AI</strong>
+          <span class="ai-status">Online</span>
+        </div>
+      </div>
+      <button class="ai-chat-close" id="aiChatClose"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="ai-chat-body" id="aiChatBody">
+      <div class="ai-chat-msg bot">
+        <div class="ai-avatar-sm"><i class="fas fa-robot"></i></div>
+        <div class="msg-bubble">Hi! I'm Nexus AI 🤖 — part of the Nexus Learning Lab. I can help students with questions, suggest study paths, and much more. What would you like to know?</div>
+      </div>
+      <div class="quick-chips">
+        <button class="chip" data-msg="Tell me about your projects" id="chip1">Projects</button>
+        <button class="chip" data-msg="What tech stack do you use?" id="chip2">Tech Stack</button>
+        <button class="chip" data-msg="How can I contact you?" id="chip3">Contact</button>
+        <button class="chip" data-msg="Tell me about Nexus Learning Lab" id="chip4">Platform</button>
+      </div>
+    </div>
+    <div class="ai-chat-input-wrap">
+      <input type="text" id="aiChatInput" class="ai-chat-input" placeholder="Ask me anything..." />
+      <button id="aiChatSend" class="ai-send-btn"><i class="fas fa-paper-plane"></i></button>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="js/particles.js"></script>
+  <script src="js/typewriter.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+/* src/pages/student/Achievements.module.css */
+.page {
+  padding: 2rem;
+  background: #0a192f;
+  min-height: 100vh;
+  color: #ccd6f6;
+}
+
+.header {
+  margin-bottom: 2.5rem;
+}
+
+.header h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #e6f1ff;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: #8892b0;
+}
+
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.statCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(100, 255, 218, 0.15);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.statIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+.statVal {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #e6f1ff;
+  font-family: 'Outfit', sans-serif;
+  line-height: 1.2;
+}
+
+.statLabel {
+  font-size: 0.75rem;
+  color: #8892b0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 2rem;
+}
+
+@media(max-width:968px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.badgesSection h2, .leaderboardSection h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #e6f1ff;
+  margin-bottom: 1.25rem;
+}
+
+.badgesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.badgeCard {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.badgeCard:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(100, 255, 218, 0.15);
+}
+
+.badgeCard.locked {
+  opacity: 0.65;
+  filter: grayscale(1);
+}
+
+.badgeEmoji {
+  font-size: 2.25rem;
+  flex-shrink: 0;
+}
+
+.badgeDetails {
+  flex: 1;
+}
+
+.badgeName {
+  font-weight: 700;
+  color: #e6f1ff;
+  font-size: 0.95rem;
+}
+
+.badgeDesc {
+  font-size: 0.75rem;
+  color: #8892b0;
+  margin-bottom: 0.4rem;
+}
+
+.progressBarWrap {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 99px;
+  overflow: hidden;
+  margin-bottom: 0.25rem;
+}
+
+.progressBar {
+  height: 100%;
+  background: #64ffda;
+  border-radius: 99px;
+}
+
+.progressText {
+  font-size: 0.68rem;
+  color: #8892b0;
+}
+
+/* Leaderboard */
+.leaderboardCard {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.leaderboardHeader {
+  display: grid;
+  grid-template-columns: 60px 1fr 100px;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #8892b0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.leaderboardList {
+  display: flex;
+  flex-direction: column;
+}
+
+.leaderboardItem {
+  display: grid;
+  grid-template-columns: 60px 1fr 100px;
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+.leaderboardItem:last-child {
+  border-bottom: none;
+}
+
+.leaderboardItem.activeRow {
+  background: rgba(100, 255, 218, 0.06);
+  border-left: 3px solid #64ffda;
+}
+
+.rankCol {
+  font-size: 1.15rem;
+}
+
+.rankNum {
+  color: #8892b0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-left: 0.25rem;
+}
+
+.nameCol {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.studentName {
+  color: #ccd6f6;
+  font-weight: 500;
+}
+
+.activeRow .studentName {
+  color: #e6f1ff;
+  font-weight: 700;
+}
+
+.meBadge {
+  background: #64ffda;
+  color: #0a192f;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+}
+
+.xpCol {
+  color: #e6f1ff;
+}
+
+.activeRow .xpCol {
+  color: #64ffda;
+}
