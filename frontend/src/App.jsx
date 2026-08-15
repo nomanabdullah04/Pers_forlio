@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import NeuralNetworkHero from './components/NeuralNetworkHero';
 import AboutSection from './components/AboutSection';
@@ -8,9 +8,24 @@ import ExperienceTimeline from './components/ExperienceTimeline';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import AIChatbot from './components/AIChatbot';
+import CyberHeadIntro from './components/CyberHeadIntro';
 
 export default function App() {
   const [isChatOpen, setIsChatOpen] = useState(false);
+  const [showIntro, setShowIntro] = useState(() => {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      
+      if (params.get('intro') === 'true' || params.get('replay') === '1' || params.get('name')) {
+        return true;
+      }
+      
+      const seen = sessionStorage.getItem('nexus_intro_seen');
+      return !seen;
+    } catch (e) {
+      return true;
+    }
+  });
 
   const handleOpenChat = () => {
     setIsChatOpen(true);
@@ -24,6 +39,10 @@ export default function App() {
     setIsChatOpen((prev) => !prev);
   };
 
+  const handleReplayIntro = () => {
+    setShowIntro(true);
+  };
+
   const handleExploreProjects = () => {
     const projectsEl = document.getElementById('projects');
     if (projectsEl) {
@@ -33,7 +52,12 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#0A192F] text-slate-100 relative selection:bg-cyan-500/30 selection:text-cyan-200">
-      <Navbar onOpenChat={handleOpenChat} />
+      
+      {showIntro && (
+        <CyberHeadIntro onComplete={() => setShowIntro(false)} />
+      )}
+
+      <Navbar onOpenChat={handleOpenChat} onReplayIntro={handleReplayIntro} />
 
       <main>
         <NeuralNetworkHero
@@ -47,7 +71,7 @@ export default function App() {
         <ContactSection />
       </main>
 
-      <Footer />
+      <Footer onReplayIntro={handleReplayIntro} />
 
       <AIChatbot
         isOpen={isChatOpen}
@@ -57,3 +81,4 @@ export default function App() {
     </div>
   );
 }
+

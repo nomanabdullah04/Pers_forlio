@@ -7,7 +7,6 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs):
         self.stdout.write("Starting database seeding...")
 
-        # 1. Profile
         Profile.objects.all().delete()
         profile = Profile.objects.create(
             name="Abdullah Al Noman",
@@ -31,7 +30,6 @@ class Command(BaseCommand):
         )
         self.stdout.write(self.style.SUCCESS(f"Created Profile: {profile.name}"))
 
-        # 2. Skill Categories & Skills
         SkillCategory.objects.all().delete()
         
         categories_data = [
@@ -97,7 +95,6 @@ class Command(BaseCommand):
                 Skill.objects.create(category=category, **skill_info)
             self.stdout.write(f"Created Category: {category.title} with {len(skills)} skills")
 
-        # 3. Featured Projects
         Project.objects.all().delete()
         projects_data = [
             {
@@ -204,7 +201,6 @@ class Command(BaseCommand):
             Project.objects.create(**p_data)
         self.stdout.write(self.style.SUCCESS(f"Created {len(projects_data)} Projects"))
 
-        # 4. Experience & Milestones
         Experience.objects.all().delete()
         exp_data = [
             {
