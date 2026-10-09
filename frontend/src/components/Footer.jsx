@@ -6,7 +6,8 @@ import {
   Instagram,
   Mail, 
   ArrowUp, 
-  MessageSquare
+  MessageSquare,
+  Code2
 } from 'lucide-react';
 
 export default function Footer() {
@@ -24,7 +25,7 @@ export default function Footer() {
               <span className="text-white font-bold text-base">{personalInfo.name}</span>
             </div>
             <p className="text-xs text-slate-400 font-mono">
-              Designed & Built with React, Django REST Framework, and MySQL.
+              AI & Deep Learning Architect • 29 GitHub Repositories • Comilla University CSE
             </p>
           </div>
 
@@ -46,6 +47,15 @@ export default function Footer() {
               title="LinkedIn Profile"
             >
               <Linkedin className="w-4 h-4" />
+            </a>
+            <a
+              href={personalInfo.codeforces}
+              target="_blank"
+              rel="noreferrer"
+              className="p-2 rounded-lg bg-slate-900 border border-slate-800 hover:text-emerald-400 hover:border-emerald-400/40 transition-colors"
+              title="Codeforces Profile"
+            >
+              <Code2 className="w-4 h-4" />
             </a>
             <a
               href={personalInfo.instagram}

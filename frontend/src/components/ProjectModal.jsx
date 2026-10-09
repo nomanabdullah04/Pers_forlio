@@ -95,7 +95,7 @@ export default function ProjectModal({ project, onClose }) {
               <span>Architectural Specifications</span>
             </div>
             <p className="text-slate-400">
-              • Repository: <span className="text-white">github.com/nomanabdullah04/{project.id}</span>
+              • Source: <a href={project.githubUrl} target="_blank" rel="noreferrer" className="text-cyan-300 hover:underline">{project.githubUrl.replace('https://', '')}</a>
             </p>
             <p className="text-slate-400">
               • Clean modular structure with high test coverage and reproducible pipeline design.

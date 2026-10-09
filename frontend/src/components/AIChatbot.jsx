@@ -35,56 +35,93 @@ export default function AIChatbot({ isOpen, onClose, onToggle }) {
     const q = query.toLowerCase();
 
     if (q.match(/\b(hi|hello|hey|greetings|hola)\b/)) {
-      return `Hello! How can I help you learn more about Abdullah Al Noman? You can ask about his **ML models**, **CampusNexus**, **skills**, or **how to contact him**.`;
+      return `Hello! How can I help you explore Abdullah Al Noman's work? You can ask about his **flagship CoU DineX system**, **CampusNexus & Coffee or Tea**, his **Transformer & Deep Learning research**, his **29 GitHub repositories**, or **how to contact him**.`;
+    }
+
+    if (q.includes('dinex') || q.includes('cou-dinex') || q.includes('dining') || q.includes('food') || q.includes('cafeteria')) {
+      return `**CoU DineX** is Noman's flagship campus dining & smart delivery operating system engineered for Comilla University:
+• **Stack:** Next.js 16, TypeScript, PostgreSQL (Neon), Prisma ORM, TailwindCSS.
+• **Key Innovations:** Multi-channel ordering (Cafeteria Pickup with 4-digit OTP, Table QR Dining, Hall & Department delivery), Real-time Kitchen Display System (KDS), courier logistics with zero-privacy-leak GPS, Campus Food Radar, and an 18-section university admin command center!
+• **GitHub Repo:** [github.com/nomanabdullah04/CoU-DineX](https://github.com/nomanabdullah04/CoU-DineX)`;
+    }
+
+    if (q.includes('campusnexus') || q.includes('campus nexus') || q.includes('rent') || q.includes('housing')) {
+      return `**CampusNexus** is Noman's full-stack campus accommodation and rental management web platform:
+• **Live Demo:** [campus-nexus-six.vercel.app](https://campus-nexus-six.vercel.app)
+• **GitHub Repo:** [github.com/nomanabdullah04/CampusNexus](https://github.com/nomanabdullah04/CampusNexus)
+• Built with modern React, JavaScript, TailwindCSS, and Node.js for smooth housing discovery and room bookings.`;
+    }
+
+    if (q.includes('coffee') || q.includes('tea')) {
+      return `**Coffee or Tea** is an interactive, multi-stage gamified web application:
+• **Live Demo:** [coffee-or-tea.vercel.app](https://coffee-or-tea.vercel.app)
+• **GitHub Repo:** [github.com/nomanabdullah04/Coffee_Or_Tea](https://github.com/nomanabdullah04/Coffee_Or_Tea)
+• Crafted with React, Vite, fluid CSS3 keyframe animations, dynamic sound effects via Web Audio APIs, and celebration stages.`;
+    }
+
+    if (q.includes('transformer') || q.includes('attention') || q.includes('encoder') || q.includes('decoder') || q.includes('lstm') || q.includes('rnn')) {
+      return `Noman has implemented specialized deep neural architectures on GitHub:
+1. **Transformer-By-Deep-Learning:** Self-attention, multi-head attention projections, and Transformer blocks.
+2. **Encoder-And-Decoder-Attention-Mechnisn-In-RNN:** Sequence-to-sequence neural model with Bahdanau/Luong attention.
+3. **Bidirectiona-RNN-Arch-And-Intuition:** Bidirectional recurrent network modeling temporal context.
+4. **LSTM-EndToEndPro & RNN_End_to_End:** Production sequential modeling pipelines.
+All code is open-source at [github.com/nomanabdullah04](https://github.com/nomanabdullah04).`;
+    }
+
+    if (q.includes('sql') || q.includes('database') || q.includes('postgres') || q.includes('mysql') || q.includes('prisma')) {
+      return `**Relational Database & Systems Mastery:**
+• **The Complete SQL Bootcamp:** [github.com/nomanabdullah04/The-Complete-SQL-Bootcamp-Go-from-Zero-to-Hero-by-Baraa-Khatib](https://github.com/nomanabdullah04/The-Complete-SQL-Bootcamp-Go-from-Zero-to-Hero-by-Baraa-Khatib)
+• Deep experience with PostgreSQL (Neon Serverless), MySQL, Prisma ORM schema modeling, complex joins, CTEs, indexing, and query optimization.`;
+    }
+
+    if (q.includes('repo') || q.includes('github') || q.includes('projects') || q.includes('portfolio')) {
+      return `Noman maintains **29 public repositories** on GitHub spanning:
+• **Flagship Full-Stack:** CoU DineX, CampusNexus, Coffee or Tea, Jhalm Student Organization.
+• **AI & Deep Learning:** Transformers, Attention RNN, Bidirectional RNN, LSTM, ANN, GenAI with LLMs, NLP, SpamClassifier, Diabetes Prediction.
+• **MLOps & DevOps:** MLflow, DVC (Data Version Control), BentoML, Docker.
+• **Competitive Coding:** CODEFORCESS_p_Solved (C++).
+Explore his complete GitHub profile at [github.com/nomanabdullah04](https://github.com/nomanabdullah04)!`;
     }
 
     if (q.includes('skill') || q.includes('stack') || q.includes('technology') || q.includes('technologies') || q.includes('know') || q.includes('language')) {
       return `**Abdullah Al Noman's Technical Arsenal:**
-• **AI & ML:** Python, PyTorch, TensorFlow, Scikit-Learn, NLP & Transformers, CNN/RNN Deep Learning.
-• **Full-Stack:** React.js, JavaScript (ES6+), HTML5/CSS3, Django & Django REST Framework, Node.js.
-• **MLOps:** MLflow, BentoML, DVC (Data Version Control), Docker.
-• **Databases & Tools:** MySQL (via XAMPP), Git, Linux, Vercel.`;
+• **Languages:** Python, TypeScript, JavaScript (ES6+), C++, SQL, HTML5/CSS3.
+• **Full-Stack & Frameworks:** Next.js 16, React.js, Vite, TailwindCSS, Prisma ORM, Node.js, Django REST Framework.
+• **AI, Deep Learning & NLP:** PyTorch, TensorFlow, Transformers, Self-Attention, LSTM/GRU/RNN, Scikit-Learn, NLTK, Hugging Face.
+• **MLOps & Infra:** MLflow, DVC, BentoML, Docker, Git/GitHub, Vercel, PostgreSQL Neon, MySQL.`;
     }
 
-    if (q.includes('campusnexus') || q.includes('campus nexus') || q.includes('rent') || q.includes('housing')) {
-      return `**CampusNexus** is Noman's full-stack campus accommodation and rental management web platform. 
-• **Live Demo:** [campus-nexus-six.vercel.app](https://campus-nexus-six.vercel.app)
-• **GitHub Repo:** [github.com/nomanabdullah04/CampusNexus](https://github.com/nomanabdullah04/CampusNexus)
-It provides seamless room listing, student tenant inquiries, and modern UI architecture.`;
+    if (q.includes('codeforce') || q.includes('c++') || q.includes('competitive') || q.includes('algorithm') || q.includes('problem')) {
+      return `Noman is an active competitive programmer in C++:
+• **Codeforces Profile:** [codeforces.com/profile/nomanabdullah04](https://codeforces.com/profile/nomanabdullah04)
+• **Solutions Repo:** [github.com/nomanabdullah04/CODEFORCESS_p_Solved](https://github.com/nomanabdullah04/CODEFORCESS_p_Solved)
+• Focus areas include Dynamic Programming, Graph Theory, Number Theory, and asymptotic complexity optimization.`;
     }
 
-    if (q.includes('machine learning') || q.includes('ml') || q.includes('deep learning') || q.includes('ai') || q.includes('nlp') || q.includes('model')) {
-      return `Noman has authored several high-impact AI/ML projects:
-1. **DeepLearning Suite:** CNN/RNN research architectures & computer vision classifiers.
-2. **NLP Engine:** Text transformers, sentiment classifiers, and tokenization models.
-3. **SpamClassifier:** 98.7% accurate SMS/Email phishing and spam detection model.
-4. **Diabetes Prediction AI:** Clinical diagnostic machine learning model for healthcare.
-All code is open-source at [github.com/nomanabdullah04](https://github.com/nomanabdullah04).`;
-    }
-
-    if (q.includes('mlops') || q.includes('dvc') || q.includes('mlflow') || q.includes('bentoml') || q.includes('pipeline')) {
-      return `Noman follows production MLOps best practices:
-• **MLflow** for experiment tracking, hyperparameter logging, and model registry.
-• **DVC (Data Version Control)** for versioning datasets and reproducible training pipelines.
-• **BentoML** for microservice model packaging and high-throughput inference serving.`;
+    if (q.includes('mlops') || q.includes('dvc') || q.includes('mlflow') || q.includes('bentoml') || q.includes('docker')) {
+      return `Noman follows production MLOps & DevOps practices:
+• **MLflow** for experiment tracking, metric visualization, and model registry.
+• **DVC (Data Version Control)** for versioning datasets and reproducible data pipelines.
+• **BentoML** for microservice model packaging and REST inference serving.
+• **Docker** for reproducible multi-stage containerization.`;
     }
 
     if (q.includes('contact') || q.includes('email') || q.includes('hire') || q.includes('reach') || q.includes('message')) {
-      return `You can connect with Abdullah Al Noman directly:
+      return `Connect with Abdullah Al Noman directly:
 • **Email:** [abdullahcse.cou14@gmail.com](mailto:abdullahcse.cou14@gmail.com)
 • **LinkedIn:** [linkedin.com/in/abdullah-al-noman-0540402a8](https://www.linkedin.com/in/abdullah-al-noman-0540402a8)
-• **Instagram:** [@nom_an041](https://www.instagram.com/nom_an041?igsh=YXE1eDlmajdpZWJj)
 • **GitHub:** [github.com/nomanabdullah04](https://github.com/nomanabdullah04)
-• **Location:** Dhaka, Bangladesh (Available for Worldwide Remote & Onsite roles)
-You can also fill out the interactive contact form below on this website!`;
+• **Instagram:** [@nom_an041](https://www.instagram.com/nom_an041?igsh=YXE1eDlmajdpZWJj)
+• **Codeforces:** [codeforces.com/profile/nomanabdullah04](https://codeforces.com/profile/nomanabdullah04)
+• **Location:** Dhaka / Cumilla, Bangladesh (Available for Worldwide Remote & Onsite roles)`;
     }
 
-    if (q.includes('education') || q.includes('degree') || q.includes('university') || q.includes('college') || q.includes('background')) {
-      return `Abdullah Al Noman has a strong foundation in **Computer Science and Engineering (CSE)** with coursework focused on Data Structures, Algorithms, Artificial Intelligence, Deep Learning, Database Systems (MySQL), and Full-Stack Engineering.`;
+    if (q.includes('education') || q.includes('degree') || q.includes('university') || q.includes('college') || q.includes('cou')) {
+      return `Abdullah Al Noman holds an academic background in **B.Sc. in Computer Science & Engineering (CSE)** at **Comilla University (CoU)**, Batch 14. He is the author of CoU DineX, the university's official smart dining and campus delivery operating system.`;
     }
 
-    return `Noman is an AI/ML Specialist and Full-Stack Software Engineer. He builds deep learning pipelines, NLP systems, full-stack web applications like CampusNexus, and MLOps workflows. 
-Feel free to ask about his specific **GitHub repositories**, **projects**, or **tech stack**!`;
+    return `Abdullah Al Noman is an AI/ML Architect and Full-Stack Software Engineer with 29 public repositories on GitHub. He builds deep learning transformers, Next.js campus platforms like CoU DineX, MLOps automation pipelines, and competitive C++ algorithms.
+Feel free to ask about his specific **GitHub repositories**, **CoU DineX**, **CampusNexus**, or **AI models**!`;
   };
 
   const handleSendMessage = async (textToSend) => {

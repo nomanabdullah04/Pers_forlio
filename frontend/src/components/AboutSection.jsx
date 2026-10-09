@@ -65,11 +65,11 @@ export default function AboutSection() {
               </h3>
               
               <p className="text-slate-300 leading-relaxed text-sm sm:text-base">
-                Hello! I am <strong className="text-white font-semibold">{personalInfo.name}</strong>, a software developer and AI/ML practitioner based in <span className="text-cyan-300">{personalInfo.location}</span>. My technical journey centers on engineering robust machine learning pipelines, deep learning neural models, and scalable modern web platforms.
+                Hello! I am <strong className="text-white font-semibold">{personalInfo.name}</strong>, a software developer and AI/ML practitioner based in <span className="text-cyan-300">{personalInfo.location}</span>. My technical journey centers on engineering robust machine learning pipelines, deep learning neural models (Transformers, Attention mechanisms, RNN/LSTM), and scalable modern web platforms.
               </p>
 
               <p className="text-slate-300 leading-relaxed text-sm sm:text-base">
-                From developing full-stack web platforms to training natural language transformers, building disease diagnostic models, and implementing MLOps frameworks with <strong className="text-purple-300">MLflow</strong> and <strong className="text-purple-300">BentoML</strong>, I enjoy taking complex technical challenges and turning them into clean, dependable software.
+                From architecting <strong className="text-cyan-300">CoU DineX</strong> (the smart campus dining and delivery logistics OS for Comilla University with Next.js 16, TypeScript, PostgreSQL, and Prisma) and <strong className="text-cyan-300">CampusNexus</strong>, to training natural language transformers, building healthcare diagnostic models, and implementing MLOps frameworks with <strong className="text-purple-300">MLflow</strong>, <strong className="text-purple-300">DVC</strong>, and <strong className="text-purple-300">BentoML</strong>, I enjoy taking complex real-world challenges and turning them into clean, dependable software.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4 border-t border-slate-700/50 text-xs sm:text-sm font-mono">
@@ -79,7 +79,7 @@ export default function AboutSection() {
                 </div>
                 <div className="p-3 rounded-lg bg-slate-900/60 border border-slate-800">
                   <span className="text-slate-500 block text-[11px]">PRIMARY DOMAINS</span>
-                  <span className="text-cyan-300">AI/ML, NLP, Full-Stack</span>
+                  <span className="text-cyan-300">AI/ML, NLP, GenAI, Full-Stack</span>
                 </div>
                 <div className="p-3 rounded-lg bg-slate-900/60 border border-slate-800">
                   <span className="text-slate-500 block text-[11px]">GITHUB USERNAME</span>
@@ -87,15 +87,20 @@ export default function AboutSection() {
                     href={personalInfo.github} 
                     target="_blank" 
                     rel="noreferrer"
-                    className="text-cyan-400 hover:underline inline-flex items-center gap-1"
+                    className="text-cyan-400 hover:underline inline-flex items-center gap-1 font-semibold"
                   >
                     nomanabdullah04 <ArrowUpRight className="w-3 h-3" />
                   </a>
                 </div>
                 <div className="p-3 rounded-lg bg-slate-900/60 border border-slate-800">
-                  <span className="text-slate-500 block text-[11px]">DIRECT EMAIL</span>
-                  <a href={`mailto:${personalInfo.email}`} className="text-slate-200 hover:text-cyan-300 truncate block">
-                    {personalInfo.email}
+                  <span className="text-slate-500 block text-[11px]">COMPETITIVE CODING</span>
+                  <a 
+                    href={personalInfo.codeforces} 
+                    target="_blank" 
+                    rel="noreferrer"
+                    className="text-emerald-400 hover:underline inline-flex items-center gap-1 font-semibold"
+                  >
+                    Codeforces: nomanabdullah04 <ArrowUpRight className="w-3 h-3" />
                   </a>
                 </div>
               </div>
@@ -148,24 +153,25 @@ export default function AboutSection() {
                   </p>
                   <div className="pl-4 space-y-1 text-slate-300">
                     <p>self.name = <span className="text-emerald-300">"Abdullah Al Noman"</span></p>
-                    <p>self.handle = <span className="text-emerald-300">"nomanabdullah04"</span></p>
-                    <p>self.focus = [<span className="text-emerald-300">"Deep Learning"</span>, <span className="text-emerald-300">"NLP"</span>, <span className="text-emerald-300">"Full-Stack"</span>]</p>
-                    <p>self.architecture = [<span className="text-emerald-300">"PyTorch"</span>, <span className="text-emerald-300">"React"</span>, <span className="text-emerald-300">"Django"</span>, <span className="text-emerald-300">"MySQL"</span>]</p>
-                    <p>self.mlops_stack = [<span className="text-emerald-300">"MLflow"</span>, <span className="text-emerald-300">"DVC"</span>, <span className="text-emerald-300">"BentoML"</span>]</p>
+                    <p>self.github = <span className="text-emerald-300">"nomanabdullah04"</span></p>
+                    <p>self.public_repos = <span className="text-cyan-300">29</span></p>
+                    <p>self.codeforces = <span className="text-emerald-300">"nomanabdullah04"</span></p>
+                    <p>self.focus = [<span className="text-emerald-300">"Deep Learning"</span>, <span className="text-emerald-300">"GenAI/LLM"</span>, <span className="text-emerald-300">"Full-Stack"</span>]</p>
+                    <p>self.mlops_stack = [<span className="text-emerald-300">"MLflow"</span>, <span className="text-emerald-300">"BentoML"</span>, <span className="text-emerald-300">"DVC"</span>, <span className="text-emerald-300">"Docker"</span>]</p>
                     <p>self.motto = <span className="text-emerald-300">"{personalInfo.bioQuote}"</span></p>
                   </div>
                   <p className="pt-1">
                     <span className="text-purple-400">def</span> <span className="text-blue-400">get_status</span>(self):
                   </p>
                   <div className="pl-4 text-slate-300">
-                    <p><span className="text-purple-400">return</span> <span className="text-emerald-300">"Building high-impact software systems"</span></p>
+                    <p><span className="text-purple-400">return</span> <span className="text-emerald-300">"Shipping AI models & responsive web applications"</span></p>
                   </div>
                 </div>
 
                 <div className="pt-3 border-t border-slate-800 text-slate-400">
                   <p>&gt;&gt;&gt; noman = EngineerProfile()</p>
                   <p className="text-cyan-300">&gt;&gt;&gt; print(noman.get_status())</p>
-                  <p className="text-emerald-400 font-semibold">&gt;&gt; "Building high-impact software systems"</p>
+                  <p className="text-emerald-400 font-semibold">&gt;&gt; "Shipping AI models & responsive web applications"</p>
                 </div>
               </div>
 

@@ -323,7 +323,7 @@ export default function ContactSection() {
                       <input
                         type="text"
                         required
-                        placeholder="John Doe"
+                        placeholder="Noman_Abdullah"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         className="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-800 focus:border-cyan-400 focus:outline-none text-sm text-white placeholder-slate-500 transition-all font-sans"
