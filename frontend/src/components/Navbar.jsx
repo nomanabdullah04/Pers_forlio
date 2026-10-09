@@ -72,8 +72,8 @@ export default function Navbar({ onOpenChat }) {
         <nav
           className={`pointer-events-auto rounded-2xl sm:rounded-full transition-all duration-300 border ${
             isScrolled
-              ? 'bg-[#060e1e]/90 backdrop-blur-xl border-cyan-500/30 shadow-[0_12px_40px_rgba(0,0,0,0.6),0_0_25px_rgba(100,255,218,0.12)] py-2.5 px-4 sm:px-6'
-              : 'bg-[#0A192F]/60 backdrop-blur-md border-cyan-500/15 shadow-[0_8px_30px_rgba(0,0,0,0.4)] py-3 px-4 sm:px-6'
+              ? 'bg-[#141208]/90 backdrop-blur-xl border-amber-500/30 shadow-[0_12px_40px_rgba(0,0,0,0.6),0_0_25px_rgba(245,158,11,0.12)] py-2.5 px-4 sm:px-6'
+              : 'bg-[#0C0C0E]/60 backdrop-blur-md border-amber-500/15 shadow-[0_8px_30px_rgba(0,0,0,0.4)] py-3 px-4 sm:px-6'
           }`}
         >
           <div className="flex items-center justify-between gap-4">
@@ -82,21 +82,21 @@ export default function Navbar({ onOpenChat }) {
               className="flex items-center gap-3 group cursor-pointer text-decoration-none flex-shrink-0"
             >
               <div className="relative">
-                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-slate-950 border border-cyan-400/40 flex items-center justify-center text-cyan-400 font-mono font-extrabold text-xs sm:text-sm tracking-wider transition-all duration-300 group-hover:scale-105 group-hover:border-cyan-300 group-hover:shadow-[0_0_16px_rgba(100,255,218,0.5)]">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-stone-950 border border-amber-400/40 flex items-center justify-center text-amber-400 font-mono font-extrabold text-xs sm:text-sm tracking-wider transition-all duration-300 group-hover:scale-105 group-hover:border-amber-300 group-hover:shadow-[0_0_16px_rgba(245,158,11,0.5)]">
                   &lt;AN/&gt;
                 </div>
                 <span className="absolute -bottom-0.5 -right-0.5 flex h-2.5 w-2.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500 border-2 border-[#0A192F]" />
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-500 border-2 border-[#0C0C0E]" />
                 </span>
               </div>
 
               <div className="flex flex-col">
                 <div className="flex items-center gap-1.5">
-                  <span className="text-white font-bold tracking-tight text-xs sm:text-sm font-sans group-hover:text-cyan-300 transition-colors">
+                  <span className="text-white font-bold tracking-tight text-xs sm:text-sm font-sans group-hover:text-amber-300 transition-colors">
                     Abdullah Al Noman
                   </span>
-                  <span className="hidden xl:inline-flex text-[9px] font-mono text-emerald-400 bg-emerald-950/80 px-1.5 py-0.5 rounded border border-emerald-500/30">
+                  <span className="hidden xl:inline-flex text-[9px] font-mono text-amber-400 bg-amber-950/80 px-1.5 py-0.5 rounded border border-amber-500/30">
                     LIVE
                   </span>
                 </div>
@@ -115,11 +115,11 @@ export default function Navbar({ onOpenChat }) {
                     href={link.href}
                     className={`relative px-3.5 py-1.5 rounded-full text-xs font-mono transition-all duration-200 flex items-center gap-1.5 ${
                       isActive
-                        ? 'bg-cyan-500/15 text-cyan-300 font-semibold border border-cyan-400/30 shadow-[0_0_12px_rgba(100,255,218,0.2)]'
-                        : 'text-slate-300 hover:text-white hover:bg-slate-800/50'
+                        ? 'bg-amber-500/15 text-amber-300 font-semibold border border-amber-400/30 shadow-[0_0_12px_rgba(245,158,11,0.2)]'
+                        : 'text-stone-300 hover:text-white hover:bg-stone-800/50'
                     }`}
                   >
-                    <span className={`text-[10px] ${isActive ? 'text-cyan-400' : 'text-slate-500'}`}>
+                    <span className={`text-[10px] ${isActive ? 'text-amber-400' : 'text-stone-500'}`}>
                       {link.num}.
                     </span>
                     <span>{link.name}</span>
@@ -131,10 +131,10 @@ export default function Navbar({ onOpenChat }) {
             <div className="hidden md:flex items-center gap-2 sm:gap-3 flex-shrink-0">
               <button
                 onClick={onOpenChat}
-                className="px-3 py-1.5 rounded-full bg-gradient-to-r from-cyan-950/90 to-purple-950/90 border border-cyan-400/30 text-cyan-300 hover:text-white hover:border-cyan-300 text-xs font-mono font-medium flex items-center gap-1.5 transition-all hover:scale-105 hover:shadow-[0_0_15px_rgba(100,255,218,0.3)] group"
+                className="px-3 py-1.5 rounded-full bg-gradient-to-r from-amber-950/90 to-orange-950/90 border border-amber-400/30 text-amber-300 hover:text-white hover:border-amber-300 text-xs font-mono font-medium flex items-center gap-1.5 transition-all hover:scale-105 hover:shadow-[0_0_15px_rgba(245,158,11,0.3)] group"
                 title="Chat with Nexus AI"
               >
-                <Sparkles className="w-3.5 h-3.5 text-cyan-400 group-hover:rotate-12 transition-transform animate-pulse" />
+                <Sparkles className="w-3.5 h-3.5 text-amber-400 group-hover:rotate-12 transition-transform animate-pulse" />
                 <span className="font-semibold">Nexus AI</span>
               </button>
 
@@ -142,7 +142,7 @@ export default function Navbar({ onOpenChat }) {
                 href={personalInfo.github}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2 rounded-full bg-slate-900/80 border border-slate-800 hover:border-cyan-400/40 text-slate-300 hover:text-cyan-400 transition-all hover:scale-105"
+                className="p-2 rounded-full bg-stone-900/80 border border-stone-800 hover:border-amber-400/40 text-stone-300 hover:text-amber-400 transition-all hover:scale-105"
                 title="GitHub Profile"
               >
                 <Github className="w-3.5 h-3.5" />
@@ -170,7 +170,7 @@ export default function Navbar({ onOpenChat }) {
 
               <a
                 href="#contact"
-                className="px-3.5 py-1.5 rounded-full bg-cyan-400 hover:bg-cyan-300 text-slate-950 text-xs font-sans font-bold flex items-center gap-1.5 transition-all hover:shadow-[0_0_20px_rgba(100,255,218,0.4)] hover:scale-105"
+                className="px-3.5 py-1.5 rounded-full bg-amber-400 hover:bg-amber-300 text-stone-950 text-xs font-sans font-bold flex items-center gap-1.5 transition-all hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] hover:scale-105"
               >
                 <Mail className="w-3.5 h-3.5" />
                 <span>Hire Me</span>
@@ -180,10 +180,10 @@ export default function Navbar({ onOpenChat }) {
             <div className="flex md:hidden items-center gap-2">
               <button
                 onClick={onOpenChat}
-                className="p-2 rounded-xl bg-cyan-950/80 border border-cyan-400/30 text-cyan-300 text-xs flex items-center gap-1"
+                className="p-2 rounded-xl bg-amber-950/80 border border-amber-400/30 text-amber-300 text-xs flex items-center gap-1"
                 title="Nexus AI"
               >
-                <Sparkles className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
+                <Sparkles className="w-3.5 h-3.5 text-amber-400 animate-pulse" />
               </button>
 
               <button

@@ -29,14 +29,14 @@ export default function ProjectModal({ project, onClose }) {
         className="fixed inset-0 bg-black/80 backdrop-blur-md transition-opacity animate-in fade-in duration-200"
       />
 
-      <div className="relative w-full max-w-3xl bg-[#0A192F] border border-cyan-500/30 rounded-2xl shadow-2xl shadow-cyan-950/60 overflow-hidden z-10 my-8 animate-in zoom-in-95 duration-200">
-        <div className="relative h-64 sm:h-72 w-full overflow-hidden bg-slate-950">
+      <div className="relative w-full max-w-3xl bg-[#0C0C0E] border border-amber-500/30 rounded-2xl shadow-2xl shadow-amber-950/60 overflow-hidden z-10 my-8 animate-in zoom-in-95 duration-200">
+        <div className="relative h-64 sm:h-72 w-full overflow-hidden bg-stone-950">
           <img
             src={project.image}
             alt={project.title}
             className="w-full h-full object-cover opacity-80 hover:scale-105 transition-transform duration-700"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F] via-[#0A192F]/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0C0C0E] via-[#0C0C0E]/40 to-transparent" />
 
           <button
             onClick={onClose}
@@ -46,7 +46,7 @@ export default function ProjectModal({ project, onClose }) {
           </button>
 
           <div className="absolute top-4 left-4">
-            <span className="px-3 py-1 rounded-full bg-cyan-950/90 border border-cyan-400/40 text-cyan-300 font-mono text-xs font-semibold backdrop-blur-md">
+            <span className="px-3 py-1 rounded-full bg-amber-950/90 border border-amber-400/40 text-amber-300 font-mono text-xs font-semibold backdrop-blur-md">
               {project.category}
             </span>
           </div>
@@ -56,7 +56,7 @@ export default function ProjectModal({ project, onClose }) {
               {project.title}
             </h3>
             {project.badge && (
-              <span className="inline-block mt-1 text-xs font-mono text-cyan-300">
+              <span className="inline-block mt-1 text-xs font-mono text-amber-300">
                 ★ {project.badge}
               </span>
             )}
@@ -65,15 +65,15 @@ export default function ProjectModal({ project, onClose }) {
 
         <div className="p-6 sm:p-8 space-y-6 max-h-[60vh] overflow-y-auto">
           <div className="space-y-2">
-            <h4 className="text-xs font-mono uppercase tracking-wider text-cyan-400">Overview</h4>
+            <h4 className="text-xs font-mono uppercase tracking-wider text-amber-400">Overview</h4>
             <p className="text-slate-300 leading-relaxed text-sm sm:text-base">
               {project.description}
             </p>
           </div>
 
           {project.metrics && (
-            <div className="p-4 rounded-xl bg-slate-900/70 border border-cyan-500/20 flex items-center gap-3 text-cyan-300 text-sm">
-              <Zap className="w-5 h-5 flex-shrink-0 text-cyan-400" />
+            <div className="p-4 rounded-xl bg-stone-900/70 border border-amber-500/20 flex items-center gap-3 text-amber-300 text-sm">
+              <Zap className="w-5 h-5 flex-shrink-0 text-amber-400" />
               <span><strong>Key Metric / Impact:</strong> {project.metrics}</span>
             </div>
           )}
@@ -89,21 +89,21 @@ export default function ProjectModal({ project, onClose }) {
             </div>
           </div>
 
-          <div className="p-4 rounded-xl bg-slate-950/70 border border-slate-800 space-y-2 font-mono text-xs text-slate-300">
-            <div className="flex items-center gap-2 text-cyan-400 font-bold">
+          <div className="p-4 rounded-xl bg-stone-950/70 border border-stone-800 space-y-2 font-mono text-xs text-stone-300">
+            <div className="flex items-center gap-2 text-amber-400 font-bold">
               <Code2 className="w-4 h-4" />
               <span>Architectural Specifications</span>
             </div>
-            <p className="text-slate-400">
-              • Source: <a href={project.githubUrl} target="_blank" rel="noreferrer" className="text-cyan-300 hover:underline">{project.githubUrl.replace('https://', '')}</a>
+            <p className="text-stone-400">
+              • Source: <a href={project.githubUrl} target="_blank" rel="noreferrer" className="text-amber-300 hover:underline">{project.githubUrl.replace('https://', '')}</a>
             </p>
-            <p className="text-slate-400">
+            <p className="text-stone-400">
               • Clean modular structure with high test coverage and reproducible pipeline design.
             </p>
           </div>
         </div>
 
-        <div className="p-6 bg-slate-950/90 border-t border-slate-800 flex flex-wrap items-center justify-between gap-4">
+        <div className="p-6 bg-stone-950/90 border-t border-stone-800 flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             {project.liveUrl && project.liveUrl.startsWith('http') && !project.liveUrl.includes('github.com') && (
               <a

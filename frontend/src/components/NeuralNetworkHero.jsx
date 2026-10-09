@@ -138,7 +138,7 @@ export default function NeuralNetworkHero({ onOpenChat, onExploreProjects }) {
           vy: (Math.random() - 0.5) * 8,
           life: 1,
           decay: 0.025,
-          color: Math.random() > 0.5 ? '#64FFDA' : '#00D2FF',
+          color: Math.random() > 0.5 ? '#F59E0B' : '#FB923C',
           size: Math.random() * 3 + 2
         });
       }
@@ -176,17 +176,17 @@ export default function NeuralNetworkHero({ onOpenChat, onExploreProjects }) {
         
         const rand = Math.random();
         if (rand > 0.65) {
-          this.color = '#64FFDA';
-          this.glow = 'rgba(100, 255, 218, 0.9)';
+          this.color = '#F59E0B';
+          this.glow = 'rgba(245, 158, 11, 0.9)';
         } else if (rand > 0.35) {
-          this.color = '#00D2FF';
-          this.glow = 'rgba(0, 210, 255, 0.9)';
+          this.color = '#FB923C';
+          this.glow = 'rgba(251, 146, 60, 0.9)';
         } else if (rand > 0.15) {
-          this.color = '#A855F7';
-          this.glow = 'rgba(168, 85, 247, 0.9)';
+          this.color = '#FBBF24';
+          this.glow = 'rgba(251, 191, 36, 0.9)';
         } else {
-          this.color = '#ffffff';
-          this.glow = 'rgba(255, 255, 255, 0.9)';
+          this.color = '#FDE68A';
+          this.glow = 'rgba(253, 230, 138, 0.9)';
         }
       }
 
@@ -260,7 +260,7 @@ export default function NeuralNetworkHero({ onOpenChat, onExploreProjects }) {
         this.to = toNode;
         this.progress = 0;
         this.speed = 0.012 + Math.random() * 0.02;
-        this.color = Math.random() > 0.5 ? '#64FFDA' : '#00D2FF';
+        this.color = Math.random() > 0.5 ? '#F59E0B' : '#FB923C';
         this.size = Math.random() * 2 + 1.5;
         this.alive = true;
       }
@@ -369,7 +369,7 @@ export default function NeuralNetworkHero({ onOpenChat, onExploreProjects }) {
         ctx.arc(rip.x, rip.y, rip.radius, 0, Math.PI * 2);
         ctx.strokeStyle = `rgba(100, 255, 218, ${rip.opacity * 0.7})`;
         ctx.lineWidth = 2;
-        ctx.shadowColor = '#64FFDA';
+        ctx.shadowColor = '#F59E0B';
         ctx.shadowBlur = 12;
         ctx.stroke();
         ctx.restore();
@@ -427,7 +427,7 @@ export default function NeuralNetworkHero({ onOpenChat, onExploreProjects }) {
             ctx.lineTo(nodes[i].x, nodes[i].y);
             ctx.strokeStyle = `rgba(0, 210, 255, ${alpha})`;
             ctx.lineWidth = 1.2;
-            ctx.shadowColor = '#00D2FF';
+            ctx.shadowColor = '#FB923C';
             ctx.shadowBlur = 6;
             ctx.stroke();
             ctx.restore();
@@ -445,8 +445,8 @@ export default function NeuralNetworkHero({ onOpenChat, onExploreProjects }) {
 
         ctx.beginPath();
         ctx.arc(mouse.x, mouse.y, 4, 0, Math.PI * 2);
-        ctx.fillStyle = '#64FFDA';
-        ctx.shadowColor = '#64FFDA';
+        ctx.fillStyle = '#F59E0B';
+        ctx.shadowColor = '#F59E0B';
         ctx.shadowBlur = 12;
         ctx.fill();
         ctx.restore();
@@ -512,20 +512,20 @@ export default function NeuralNetworkHero({ onOpenChat, onExploreProjects }) {
         style={{ cursor: 'crosshair' }}
       />
 
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[600px] lg:w-[900px] h-[350px] sm:h-[400px] bg-cyan-500/10 rounded-full blur-[100px] sm:blur-[140px] pointer-events-none -z-10" />
-      <div className="absolute bottom-10 right-5 sm:right-10 w-[300px] sm:w-[450px] lg:w-[600px] h-[300px] sm:h-[350px] bg-purple-600/10 rounded-full blur-[100px] sm:blur-[140px] pointer-events-none -z-10" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[600px] lg:w-[900px] h-[350px] sm:h-[400px] bg-amber-500/10 rounded-full blur-[100px] sm:blur-[140px] pointer-events-none -z-10" />
+      <div className="absolute bottom-10 right-5 sm:right-10 w-[300px] sm:w-[450px] lg:w-[600px] h-[300px] sm:h-[350px] bg-orange-600/10 rounded-full blur-[100px] sm:blur-[140px] pointer-events-none -z-10" />
 
       <div className="max-w-7xl 2xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-16 items-center">
           
           <div className="lg:col-span-7 xl:col-span-8 space-y-5 sm:space-y-6 text-left">
-            <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-400/30 text-cyan-300 text-xs sm:text-sm font-mono backdrop-blur-md glow-cyan">
-              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
+            <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-full bg-amber-950/60 border border-amber-400/30 text-amber-300 text-xs sm:text-sm font-mono backdrop-blur-md glow-cyan">
+              <span className="w-2 h-2 rounded-full bg-amber-400 animate-ping" />
               <span>Available for ML & Full-Stack Engineering</span>
             </div>
 
             <div className="space-y-1 sm:space-y-2">
-              <p className="text-cyan-400 font-mono text-sm sm:text-base lg:text-lg tracking-wide">
+              <p className="text-amber-400 font-mono text-sm sm:text-base lg:text-lg tracking-wide">
                 Hi, my name is
               </p>
               <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-extrabold text-white tracking-tight leading-[1.1]">
@@ -536,7 +536,7 @@ export default function NeuralNetworkHero({ onOpenChat, onExploreProjects }) {
             <div className="min-h-[3rem] sm:min-h-[3.5rem] lg:min-h-[4rem] flex items-center">
               <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-bold text-gradient leading-tight">
                 {displayedText}
-                <span className="animate-pulse text-cyan-400 font-mono">|</span>
+                <span className="animate-pulse text-amber-400 font-mono">|</span>
               </h2>
             </div>
 
@@ -545,7 +545,7 @@ export default function NeuralNetworkHero({ onOpenChat, onExploreProjects }) {
             </p>
 
             <div className="p-3 sm:p-3.5 rounded-xl bg-slate-900/60 border border-slate-700/50 backdrop-blur-md max-w-xl flex items-center gap-3 text-xs sm:text-sm text-slate-300 italic">
-              <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400 flex-shrink-0" />
+              <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400 flex-shrink-0" />
               <span>"{personalInfo.bioQuote}"</span>
             </div>
 
@@ -566,13 +566,13 @@ export default function NeuralNetworkHero({ onOpenChat, onExploreProjects }) {
                 onClick={onOpenChat}
                 className="btn-primary group text-xs sm:text-sm py-2.5 sm:py-3 px-4 sm:px-6"
               >
-                <Brain className="w-4 h-4 text-cyan-400" />
+                <Brain className="w-4 h-4 text-amber-400" />
                 <span>Chat with Nexus AI</span>
               </button>
 
               <a
                 href="#contact"
-                className="px-4 sm:px-5 py-2.5 sm:py-3 rounded-lg border border-slate-700 hover:border-cyan-400/50 text-slate-300 hover:text-white font-mono text-xs sm:text-sm transition-all duration-200 bg-slate-900/40 backdrop-blur-sm"
+                className="px-4 sm:px-5 py-2.5 sm:py-3 rounded-lg border border-stone-700 hover:border-amber-400/50 text-stone-300 hover:text-white font-mono text-xs sm:text-sm transition-all duration-200 bg-stone-900/40 backdrop-blur-sm"
               >
                 Get In Touch
               </a>
@@ -584,7 +584,7 @@ export default function NeuralNetworkHero({ onOpenChat, onExploreProjects }) {
                 href={personalInfo.github}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2 sm:p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-cyan-400/40 hover:text-cyan-400 transition-all hover:scale-105"
+                className="p-2 sm:p-2.5 rounded-xl bg-stone-900/80 border border-stone-800 hover:border-amber-400/40 hover:text-amber-400 transition-all hover:scale-105"
                 title="GitHub Profile"
               >
                 <Github className="w-4 h-4" />
@@ -609,7 +609,7 @@ export default function NeuralNetworkHero({ onOpenChat, onExploreProjects }) {
               </a>
               <a
                 href={`mailto:${personalInfo.email}`}
-                className="p-2 sm:p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-cyan-400/40 hover:text-cyan-400 transition-all hover:scale-105"
+                className="p-2 sm:p-2.5 rounded-xl bg-stone-900/80 border border-stone-800 hover:border-amber-400/40 hover:text-amber-400 transition-all hover:scale-105"
                 title="Direct Email"
               >
                 <Mail className="w-4 h-4" />
@@ -618,7 +618,7 @@ export default function NeuralNetworkHero({ onOpenChat, onExploreProjects }) {
                 href={personalInfo.gmailComposeUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="px-2.5 sm:px-3 py-1.5 rounded-xl bg-cyan-950/80 border border-cyan-500/30 text-cyan-300 hover:text-white text-xs font-mono flex items-center gap-1.5 transition-all"
+                className="px-2.5 sm:px-3 py-1.5 rounded-xl bg-amber-950/80 border border-amber-500/30 text-amber-300 hover:text-white text-xs font-mono flex items-center gap-1.5 transition-all"
                 title="Open in Gmail"
               >
                 <span>Gmail Me</span>
@@ -628,25 +628,25 @@ export default function NeuralNetworkHero({ onOpenChat, onExploreProjects }) {
 
           <div className="lg:col-span-5 xl:col-span-4 flex justify-center w-full">
             <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-sm">
-              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 rounded-3xl blur-xl opacity-40 group-hover:opacity-70 transition duration-1000 animate-pulse-glow" />
+              <div className="absolute -inset-1 bg-gradient-to-r from-amber-500 via-orange-500 to-yellow-500 rounded-3xl blur-xl opacity-40 group-hover:opacity-70 transition duration-1000 animate-pulse-glow" />
               
-              <div className="relative glass-card p-5 sm:p-6 rounded-2xl space-y-4 sm:space-y-5 border-cyan-500/30">
+              <div className="relative glass-card p-5 sm:p-6 rounded-2xl space-y-4 sm:space-y-5 border-amber-500/30">
                 <div className="flex items-center gap-3.5 sm:gap-4 pb-3.5 sm:pb-4 border-b border-slate-700/50">
                   <div className="relative flex-shrink-0">
-                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full p-0.5 bg-gradient-to-tr from-cyan-400 via-blue-500 to-purple-500 shadow-xl shadow-cyan-500/25">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full p-0.5 bg-gradient-to-tr from-amber-400 via-orange-500 to-yellow-500 shadow-xl shadow-amber-500/25">
                       <img
                         src={personalInfo.avatar}
                         alt={personalInfo.name}
-                        className="w-full h-full rounded-full object-cover object-center border-2 border-[#0A192F]"
+                        className="w-full h-full rounded-full object-cover object-center border-2 border-[#0C0C0E]"
                       />
                     </div>
-                    <div className="absolute bottom-0.5 right-0.5 sm:bottom-1 sm:right-1 w-3.5 h-3.5 sm:w-4 sm:h-4 bg-emerald-400 rounded-full border-2 border-[#0A192F] shadow-sm" title="Online & Available" />
+                    <div className="absolute bottom-0.5 right-0.5 sm:bottom-1 sm:right-1 w-3.5 h-3.5 sm:w-4 sm:h-4 bg-amber-400 rounded-full border-2 border-[#0C0C0E] shadow-sm" title="Online & Available" />
                   </div>
                   <div>
                     <h3 className="text-base sm:text-lg font-bold text-white leading-tight">
                       {personalInfo.name}
                     </h3>
-                    <p className="text-xs font-mono text-cyan-300 mt-0.5">
+                    <p className="text-xs font-mono text-amber-300 mt-0.5">
                       @nomanabdullah04
                     </p>
                     <p className="text-xs text-slate-400 mt-1 flex items-center gap-1">
@@ -661,9 +661,9 @@ export default function NeuralNetworkHero({ onOpenChat, onExploreProjects }) {
                     return (
                       <div
                         key={idx}
-                        className="p-2.5 sm:p-3 rounded-xl bg-slate-900/60 border border-slate-800/80 hover:border-cyan-500/30 transition-all"
+                        className="p-2.5 sm:p-3 rounded-xl bg-stone-900/60 border border-stone-800/80 hover:border-amber-500/30 transition-all"
                       >
-                        <div className="flex items-center gap-1.5 text-cyan-400 mb-1">
+                        <div className="flex items-center gap-1.5 text-amber-400 mb-1">
                           <IconComponent className="w-3.5 h-3.5" />
                           <span className="text-[11px] sm:text-xs font-mono text-slate-400">{stat.label.split(' ')[0]}</span>
                         </div>
@@ -699,9 +699,9 @@ export default function NeuralNetworkHero({ onOpenChat, onExploreProjects }) {
 
                 <button
                   onClick={onOpenChat}
-                  className="w-full py-2 sm:py-2.5 px-4 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 text-xs font-mono font-medium flex items-center justify-center gap-2 transition-all"
+                  className="w-full py-2 sm:py-2.5 px-4 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs font-mono font-medium flex items-center justify-center gap-2 transition-all"
                 >
-                  <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+                  <Sparkles className="w-3.5 h-3.5 text-amber-400" />
                   Ask AI About Noman's Stack
                 </button>
               </div>
@@ -713,7 +713,7 @@ export default function NeuralNetworkHero({ onOpenChat, onExploreProjects }) {
 
       <a
         href="#about"
-        className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-slate-500 hover:text-cyan-400 transition-colors z-10 font-mono text-xs"
+        className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-stone-500 hover:text-amber-400 transition-colors z-10 font-mono text-xs"
       >
         <span className="hidden sm:inline">Scroll Down</span>
         <ChevronDown className="w-4 h-4 animate-bounce" />

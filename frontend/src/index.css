@@ -2,19 +2,20 @@
 @import "tailwindcss";
 
 :root {
-  --bg-deep: #020c1b;
-  --bg-main: #0A192F;
-  --bg-card: rgba(17, 34, 64, 0.75);
-  --bg-card-hover: rgba(23, 42, 75, 0.9);
-  --border-card: rgba(100, 255, 218, 0.15);
-  --border-card-hover: rgba(100, 255, 218, 0.4);
+  --bg-deep: #070709;
+  --bg-main: #0C0C0E;
+  --bg-card: rgba(20, 18, 14, 0.82);
+  --bg-card-hover: rgba(30, 26, 18, 0.95);
+  --border-card: rgba(245, 158, 11, 0.18);
+  --border-card-hover: rgba(251, 146, 60, 0.5);
   
-  --accent-cyan: #64FFDA;
-  --accent-blue: #00D2FF;
-  --accent-purple: #9d4edd;
-  --text-main: #ccd6f6;
-  --text-muted: #8892b0;
-  --text-bright: #ffffff;
+  --accent-amber: #F59E0B;
+  --accent-orange: #FB923C;
+  --accent-gold: #FBBF24;
+  --accent-warm: #FDE68A;
+  --text-main: #E8DCC8;
+  --text-muted: #9B8E7A;
+  --text-bright: #FFF8EE;
 
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
@@ -34,9 +35,9 @@ body {
   overflow-x: hidden;
   line-height: 1.6;
   background-image: 
-    radial-gradient(circle at 15% 15%, rgba(100, 255, 218, 0.04) 0%, transparent 40%),
-    radial-gradient(circle at 85% 70%, rgba(157, 78, 221, 0.05) 0%, transparent 45%),
-    radial-gradient(circle at 50% 50%, rgba(0, 210, 255, 0.02) 0%, transparent 60%);
+    radial-gradient(circle at 15% 15%, rgba(245, 158, 11, 0.06) 0%, transparent 45%),
+    radial-gradient(circle at 85% 70%, rgba(251, 146, 60, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(251, 191, 36, 0.02) 0%, transparent 60%);
   background-attachment: fixed;
 }
 
@@ -57,61 +58,85 @@ code, .font-mono {
   background: var(--bg-deep);
 }
 ::-webkit-scrollbar-thumb {
-  background: #233554;
+  background: #2A2318;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-cyan);
+  background: var(--accent-amber);
 }
 
+/* ==================== GRADIENT BORDER CARD ==================== */
 .glass-card {
   background: var(--bg-card);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--border-card);
   border-radius: 16px;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+  box-shadow: 0 10px 30px -15px rgba(2, 2, 4, 0.8);
+  position: relative;
+}
+
+/* Gradient border via pseudo-element */
+.glass-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(245,158,11,0.3) 0%, rgba(251,146,60,0.1) 50%, rgba(251,191,36,0.2) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  transition: all 0.35s ease;
 }
 
 .glass-card:hover {
   background: var(--bg-card-hover);
-  border-color: var(--border-card-hover);
   transform: translateY(-4px);
-  box-shadow: 0 20px 40px -15px rgba(100, 255, 218, 0.15);
+  box-shadow: 0 20px 40px -15px rgba(245, 158, 11, 0.2), 0 0 0 1px rgba(251, 146, 60, 0.15);
+}
+
+.glass-card:hover::before {
+  background: linear-gradient(135deg, rgba(245,158,11,0.65) 0%, rgba(251,146,60,0.4) 50%, rgba(251,191,36,0.55) 100%);
 }
 
 .glass-nav {
-  background: rgba(10, 25, 47, 0.9);
+  background: rgba(12, 12, 14, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(100, 255, 218, 0.12);
+  border-bottom: 1px solid rgba(245, 158, 11, 0.14);
 }
 
+/* ==================== TEXT GRADIENTS ==================== */
 .text-gradient {
-  background: linear-gradient(135deg, #64FFDA 0%, #00D2FF 50%, #A855F7 100%);
+  background: linear-gradient(135deg, #F59E0B 0%, #FB923C 50%, #FBBF24 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .text-gradient-cyan {
-  background: linear-gradient(135deg, #64FFDA 0%, #00D2FF 100%);
+  background: linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
+/* ==================== GLOW EFFECTS ==================== */
 .glow-cyan {
-  box-shadow: 0 0 20px rgba(100, 255, 218, 0.25);
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
 }
 
 .glow-purple {
-  box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
+  box-shadow: 0 0 20px rgba(251, 146, 60, 0.3);
 }
 
+/* ==================== BUTTONS ==================== */
 .btn-primary {
   background: transparent;
-  color: var(--accent-cyan);
-  border: 1px solid var(--accent-cyan);
+  color: var(--accent-amber);
+  border: 1px solid var(--accent-amber);
   border-radius: 8px;
   padding: 10px 22px;
   font-family: 'Fira Code', monospace;
@@ -135,14 +160,16 @@ code, .font-mono {
   left: 0;
   width: 0%;
   height: 100%;
-  background: rgba(100, 255, 218, 0.12);
+  background: rgba(245, 158, 11, 0.12);
   transition: width 0.3s ease;
   z-index: -1;
 }
 
 .btn-primary:hover {
-  box-shadow: 0 0 25px rgba(100, 255, 218, 0.3);
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.35);
   transform: translateY(-2px);
+  color: var(--accent-gold);
+  border-color: var(--accent-gold);
 }
 
 .btn-primary:hover::before {
@@ -150,13 +177,13 @@ code, .font-mono {
 }
 
 .btn-solid {
-  background: linear-gradient(135deg, #64FFDA 0%, #00D2FF 100%);
-  color: #020c1b;
+  background: linear-gradient(135deg, #F59E0B 0%, #FB923C 100%);
+  color: #0C0C0E;
   border: none;
   border-radius: 8px;
   padding: 10px 22px;
   font-family: 'Space Grotesk', sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.9rem;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -167,11 +194,12 @@ code, .font-mono {
 }
 
 .btn-solid:hover {
-  box-shadow: 0 0 30px rgba(0, 210, 255, 0.4);
+  box-shadow: 0 0 30px rgba(245, 158, 11, 0.45);
   transform: translateY(-2px);
-  filter: brightness(1.08);
+  filter: brightness(1.1);
 }
 
+/* ==================== ANIMATIONS ==================== */
 @keyframes float {
   0%, 100% {
     transform: translateY(0);
@@ -200,10 +228,11 @@ code, .font-mono {
   animation: pulseGlow 4s ease-in-out infinite;
 }
 
+/* ==================== TECH TAGS ==================== */
 .tech-tag {
-  background: rgba(100, 255, 218, 0.08);
-  color: var(--accent-cyan);
-  border: 1px solid rgba(100, 255, 218, 0.2);
+  background: rgba(245, 158, 11, 0.08);
+  color: var(--accent-amber);
+  border: 1px solid rgba(245, 158, 11, 0.22);
   border-radius: 6px;
   padding: 4px 10px;
   font-family: 'Fira Code', monospace;
@@ -215,43 +244,46 @@ code, .font-mono {
 }
 
 .tech-tag:hover {
-  background: rgba(100, 255, 218, 0.18);
-  border-color: var(--accent-cyan);
+  background: rgba(245, 158, 11, 0.18);
+  border-color: var(--accent-amber);
   transform: translateY(-1px);
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.2);
 }
 
+/* ==================== FILTER BUTTONS ==================== */
 .filter-btn {
   padding: 8px 18px;
   border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 500;
   transition: all 0.25s ease;
-  border: 1px solid rgba(136, 146, 176, 0.2);
-  background: rgba(17, 34, 64, 0.4);
+  border: 1px solid rgba(155, 142, 122, 0.25);
+  background: rgba(20, 18, 14, 0.5);
   color: var(--text-muted);
   cursor: pointer;
 }
 
 .filter-btn:hover {
   color: var(--text-bright);
-  border-color: rgba(100, 255, 218, 0.4);
+  border-color: rgba(245, 158, 11, 0.45);
 }
 
 .filter-btn.active {
-  background: rgba(100, 255, 218, 0.15);
-  color: var(--accent-cyan);
-  border-color: var(--accent-cyan);
-  box-shadow: 0 0 15px rgba(100, 255, 218, 0.2);
+  background: rgba(245, 158, 11, 0.12);
+  color: var(--accent-amber);
+  border-color: var(--accent-amber);
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.2);
 }
 
+/* ==================== CHAT WINDOW ==================== */
 .chat-window {
   width: 380px;
   height: 520px;
-  background: rgba(10, 25, 47, 0.95);
+  background: rgba(12, 12, 14, 0.97);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(100, 255, 218, 0.25);
+  border: 1px solid rgba(245, 158, 11, 0.28);
   border-radius: 20px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(100, 255, 218, 0.1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(245, 158, 11, 0.12);
   display: flex;
   flex-direction: column;
   overflow: hidden;
