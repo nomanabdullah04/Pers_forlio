@@ -298,3 +298,109 @@ code, .font-mono {
     bottom: 80px;
   }
 }
+
+/* ==================== 3D TILT CARD EFFECT ==================== */
+.tilt-card-wrapper {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease-out;
+  will-change: transform;
+}
+
+.tilt-card .tilt-glare {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.04) 45%,
+    transparent 50%
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.tilt-card:hover .tilt-glare {
+  opacity: 1;
+}
+
+.tilt-card .tilt-inner {
+  transform: translateZ(30px);
+  transition: transform 0.3s ease;
+}
+
+.tilt-card:hover .tilt-inner {
+  transform: translateZ(50px);
+}
+
+/* ==================== PARALLAX SCROLL ==================== */
+.parallax-section {
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.parallax-bg {
+  position: absolute;
+  inset: -50px;
+  z-index: -1;
+  transition: transform 0.1s ease-out;
+  will-change: transform;
+  pointer-events: none;
+}
+
+/* ==================== 3D GALLERY ==================== */
+.gallery-3d-container {
+  transform-style: preserve-3d;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.gallery-3d-card {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform, opacity, filter;
+}
+
+.gallery-3d-card img {
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* ==================== RESUME SECTION ==================== */
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.resume-gradient-border {
+  background-size: 200% 200%;
+  animation: gradientShift 4s ease infinite;
+}
+
+/* ==================== SECTION REVEAL ANIMATION ==================== */
+@keyframes sectionReveal {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-reveal {
+  animation: sectionReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

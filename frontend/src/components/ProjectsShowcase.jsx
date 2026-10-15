@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import { featuredProjects, allGithubRepositories } from '../data/portfolioData';
 import ProjectModal from './ProjectModal';
 import { 
@@ -14,6 +14,58 @@ import {
   Calendar,
   Layers
 } from 'lucide-react';
+
+// 3D Tilt Card wrapper component
+function TiltCard({ children, className = '' }) {
+  const cardRef = useRef(null);
+
+  const handleMouseMove = useCallback((e) => {
+    const card = cardRef.current;
+    if (!card) return;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rotateX = ((y - centerY) / centerY) * -8;
+    const rotateY = ((x - centerX) / centerX) * 8;
+    
+    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+    
+    // Update glare position
+    const glare = card.querySelector('.tilt-glare');
+    if (glare) {
+      const angle = Math.atan2(y - centerY, x - centerX) * (180 / Math.PI) + 90;
+      glare.style.background = `linear-gradient(${angle}deg, transparent 30%, rgba(255,255,255,0.07) 45%, rgba(245,158,11,0.04) 50%, transparent 60%)`;
+      glare.style.opacity = '1';
+    }
+  }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    const card = cardRef.current;
+    if (!card) return;
+    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+    card.style.transition = 'transform 0.5s cubic-bezier(0.23, 1, 0.32, 1)';
+    const glare = card.querySelector('.tilt-glare');
+    if (glare) glare.style.opacity = '0';
+    setTimeout(() => {
+      if (card) card.style.transition = 'transform 0.1s ease-out';
+    }, 500);
+  }, []);
+
+  return (
+    <div
+      ref={cardRef}
+      className={`tilt-card ${className}`}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{ transition: 'transform 0.1s ease-out', transformStyle: 'preserve-3d' }}
+    >
+      <div className="tilt-glare" style={{ position: 'absolute', inset: 0, borderRadius: 'inherit', pointerEvents: 'none', opacity: 0, transition: 'opacity 0.3s ease', zIndex: 2 }} />
+      {children}
+    </div>
+  );
+}
 
 const languageColors = {
   TypeScript: 'bg-blue-400',
@@ -192,10 +244,10 @@ export default function ProjectsShowcase() {
         {viewMode === 'featured' && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredFeatured.map((project) => (
-              <div
-                key={project.id}
-                className="glass-card rounded-2xl overflow-hidden border-stone-800 hover:border-amber-400/40 flex flex-col justify-between group transition-all duration-300"
-              >
+              <TiltCard key={project.id} className="rounded-2xl">
+                <div
+                  className="glass-card rounded-2xl overflow-hidden border-stone-800 hover:border-amber-400/40 flex flex-col justify-between group transition-all duration-300 h-full"
+                >
                 <div>
                   <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-slate-950">
                     <img
@@ -277,7 +329,8 @@ export default function ProjectsShowcase() {
                     )}
                   </div>
                 </div>
-              </div>
+                </div>
+              </TiltCard>
             ))}
           </div>
         )}

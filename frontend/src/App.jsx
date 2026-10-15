@@ -5,6 +5,8 @@ import AboutSection from './components/AboutSection';
 import SkillsMatrix from './components/SkillsMatrix';
 import ProjectsShowcase from './components/ProjectsShowcase';
 import ExperienceTimeline from './components/ExperienceTimeline';
+import PhotoGallery3D from './components/PhotoGallery3D';
+import ResumeSection from './components/ResumeSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import AIChatbot from './components/AIChatbot';
@@ -68,6 +70,8 @@ export default function App() {
         <SkillsMatrix />
         <ProjectsShowcase />
         <ExperienceTimeline />
+        <PhotoGallery3D />
+        <ResumeSection />
         <ContactSection />
       </main>
 
